@@ -6,32 +6,42 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
 
-    private int instanceNumber=1;
-    private int generatorIdentifier;
-    private int counter=0;
-    private int upperLimit=Integer.MAX_VALUE;
-    private int lowerLimit=Integer.MIN_VALUE;
+    private int generatorIdentifier;// upper limit 35k - 16 binary places
+    private int counter;
+    private int instance;//upper limit 128 - 8 binary places
+    private long upperLimit;
+    private long COUNTER_MAX_VALUE=1099511627775l;
     private ReentrantLock lock=new ReentrantLock();
 
-    public UniqueNumberGeneratorImpl(int generatorIdentifier,int instanceNumber) {
+    public UniqueNumberGeneratorImpl(int generatorIdentifier,int instance) {
         this.generatorIdentifier=generatorIdentifier;
-        this.instanceNumber = instanceNumber;
-        this.upperLimit=Integer.MAX_VALUE/instanceNumber;
-
+        this.instance = instance;
+        this.upperLimit=COUNTER_MAX_VALUE/instance;
     }
 
     private long generate()
     {
-        long retVal=this.generatorIdentifier;
-        displayLongInBinary(retVal);
-        retVal=retVal<<32;
-        displayLongInBinary(retVal);
-        retVal=retVal|counter;
-        displayLongInBinary(retVal);
+        long retVal=generateLong();
+
         if(this.counter<this.upperLimit)
         {
             counter++;
         }
+        return retVal;
+    }
+
+    private long generateLong()
+    {
+        long retVal=this.generatorIdentifier;
+        displayLongInBinary(retVal);
+        retVal=retVal<<8;
+        displayLongInBinary(retVal);
+        retVal=retVal|instance;
+        displayLongInBinary(retVal);
+        retVal=retVal<<40;
+        displayLongInBinary(retVal);
+        retVal=retVal|counter;
+        displayLongInBinary(retVal);
         return retVal;
     }
 

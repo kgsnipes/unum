@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9777934b-505c-4773-9d9e-01809155be7e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unum/UniqueNumberGenerationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unum/UniqueNumberGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGenerationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/unum/UniqueNumberGeneratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -45,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="21" selection-end-column="27" />
+            <state relative-caret-position="-116">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueNumberGeneratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="72" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#265#266#0" expanded="true" />
@@ -125,11 +118,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1592" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1440" />
     <option name="y" value="-155" />
-    <option name="width" value="1443" />
-    <option name="height" value="877" />
+    <option name="width" value="1869" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -208,6 +201,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -262,24 +256,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.14 at 11h 53m 32s.xml">
-      <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.14 at 11h 54m 28s.xml">
-      <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.14 at 11h 56m 32s.xml">
-      <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.14 at 11h 57m 26s.xml">
-      <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.14 at 11h 59m 10s.xml">
-      <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.14 at 11h 59m 28s.xml">
-      <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.14 at 12h 06m 25s.xml">
       <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
     </history-entry>
@@ -292,12 +268,30 @@
     <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.14 at 12h 16m 49s.xml">
       <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.15 at 10h 26m 09s.xml">
+      <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.15 at 10h 26m 32s.xml">
+      <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.15 at 10h 29m 34s.xml">
+      <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.15 at 10h 30m 46s.xml">
+      <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.15 at 10h 32m 13s.xml">
+      <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueNumberGeneratorTest_getNextLongTest - 2021.10.15 at 10h 33m 10s.xml">
+      <configuration name="UniqueNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1592" y="-155" width="1443" height="877" extended-state="0" />
+    <frame x="1440" y="-155" width="1863" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25339043" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19494782" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -306,7 +300,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32991013" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26854753" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -357,8 +351,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueNumberGeneratorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="72" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#265#266#0" expanded="true" />
@@ -369,8 +363,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="21" selection-end-column="27" />
+        <state relative-caret-position="-116">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
