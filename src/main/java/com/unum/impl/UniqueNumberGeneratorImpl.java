@@ -33,15 +33,15 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
     private long generateLong()
     {
         long retVal=this.generatorIdentifier;
-        displayLongInBinary(retVal);
+        //displayLongInBinary(retVal);
         retVal=retVal<<8;
-        displayLongInBinary(retVal);
+        //displayLongInBinary(retVal);
         retVal=retVal|instance;
-        displayLongInBinary(retVal);
+       // displayLongInBinary(retVal);
         retVal=retVal<<40;
-        displayLongInBinary(retVal);
+       // displayLongInBinary(retVal);
         retVal=retVal|counter;
-        displayLongInBinary(retVal);
+       // displayLongInBinary(retVal);
         return retVal;
     }
 
