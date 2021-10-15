@@ -3,8 +3,11 @@ package com.unum.impl;
 import com.unum.UniqueNumberGenerator;
 
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.logging.Logger;
 
 public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
+
+    private final static Logger log=Logger.getLogger("UniqueNumberGeneratorImpl");
 
     private int generatorIdentifier;// upper limit 35k - 16 binary places
     private int counter;
@@ -68,11 +71,14 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
             value=value/2;
         }
 
+        StringBuilder builder=new StringBuilder();
+
+
         for(int i=0;i<arr.length;i++)
         {
-            System.out.print(arr[i]);
+            builder.append(arr[i]==1?"1":"0");
         }
-        System.out.println();
+        log.info(builder.toString());
 
     }
 
