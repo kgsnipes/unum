@@ -2,5 +2,5 @@ package com.unum;
 
 public interface UniqueNumberGenerator {
 
-    long getNextLong();
+    long getNextLong() throws Exception;
 }
