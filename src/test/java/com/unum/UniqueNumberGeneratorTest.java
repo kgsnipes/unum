@@ -1,11 +1,15 @@
 package com.unum;
 
 import com.unum.impl.UniqueNumberGeneratorImpl;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashSet;
-import java.util.Set;
+
+import java.util.ArrayList;
+
+import java.util.List;
+
 import java.util.logging.Logger;
 
 
@@ -43,9 +47,9 @@ public class UniqueNumberGeneratorTest {
        NumberFetchingProcess process=new NumberFetchingProcess(poolSize,getGenerator(3001,1,poolSize));
        process.start();
        process.join();
-       log.info("Acquired Numbers "+process.getAcquiredNumbers().size());
-       log.info("Poolsize "+poolSize);
-       Assertions.assertEquals(process.getAcquiredNumbers().size(),poolSize,"Not equal unique numbers");
+       //log.info("Acquired Numbers "+process.getAcquiredNumbers().size());
+       //log.info("Poolsize "+poolSize);
+       Assertions.assertEquals(poolSize,process.getAcquiredNumbers().size(),"Not equal unique numbers");
     }
 
     @Test
@@ -74,7 +78,7 @@ class NumberFetchingProcess extends Thread{
     private Logger log=Logger.getLogger("NumberFetchingProcess");
     private long poolSize;
     private UniqueNumberGenerator generator;
-    private Set<Long> acquiredNumbers=new HashSet<>();
+    private List<Long> acquiredNumbers=new ArrayList<>();
 
     public NumberFetchingProcess(long poolSize, UniqueNumberGenerator generator) {
         this.poolSize = poolSize;
@@ -82,7 +86,7 @@ class NumberFetchingProcess extends Thread{
     }
 
 
-    public Set<Long> getAcquiredNumbers() {
+    public List<Long> getAcquiredNumbers() {
         return acquiredNumbers;
     }
 
@@ -93,10 +97,20 @@ class NumberFetchingProcess extends Thread{
             while(this.poolSize>0)
             {
                 long num=this.generator.getNextLong();
-                this.acquiredNumbers.add(num);
-                log.info("Fetching next number : "+ this.generator.getNextLong());
-               // Thread.sleep(100);
-                this.poolSize--;
+                //FileUtils.write(new File("numbers.txt"),num+"\n","utf-8",true);
+                if(!this.acquiredNumbers.contains(num))
+                {
+                    this.acquiredNumbers.add(num);
+                    //log.info("Fetching next number : "+ this.generator.getNextLong());
+                    // Thread.sleep(100);
+                    this.poolSize--;
+                }
+                else
+                {
+                    log.info("Number exists "+ num);
+                    break;
+                }
+
             }
         }
         catch (Exception ex)
