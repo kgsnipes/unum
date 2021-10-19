@@ -94,12 +94,12 @@ public class CachedUniqueNumberGeneratorImpl extends UniqueNumberGeneratorImpl{
 
             if(upperLimit-counter>cacheSize-queue.size())
             {
-                log.info("fill 1 - "+(cacheSize-queue.size()));
+                //log.info("fill 1 - "+(cacheSize-queue.size()));
                 fillQueue(cacheSize-queue.size());
             }
             else
             {
-                log.info("fill 2 - "+(upperLimit-counter));
+                //log.info("fill 2 - "+(upperLimit-counter));
                 fillQueue((int) (upperLimit-counter));
             }
 
