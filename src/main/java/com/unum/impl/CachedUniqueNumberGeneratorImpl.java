@@ -31,6 +31,13 @@ public class CachedUniqueNumberGeneratorImpl extends UniqueNumberGeneratorImpl{
         this.fillQueue(this.cacheSize);
     }
 
+    public CachedUniqueNumberGeneratorImpl(int generatorIdentifier, int instance, int poolsize,int cacheSize) throws Exception {
+        super(generatorIdentifier, instance, poolsize);
+        this.cacheSize=cacheSize;
+        this.initQueue();
+        this.fillQueue(this.cacheSize);
+    }
+
     private void initQueue()
     {
         this.queue= EvictingQueue.create(this.cacheSize);
