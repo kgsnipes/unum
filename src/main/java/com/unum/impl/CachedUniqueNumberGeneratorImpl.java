@@ -17,9 +17,8 @@ public class CachedUniqueNumberGeneratorImpl extends UniqueNumberGeneratorImpl{
 
     private int cacheSize=1000;
     private Queue<Long> queue;
-    private ReadWriteLock lock=new ReentrantReadWriteLock();
-    private Lock rLock=lock.readLock();
-    private Lock wLock=lock.writeLock();
+    private Lock lock=new ReentrantLock();
+
     public CachedUniqueNumberGeneratorImpl(int generatorIdentifier, int instance, int poolsize) throws Exception {
         super(generatorIdentifier, instance, poolsize);
 
@@ -45,7 +44,7 @@ public class CachedUniqueNumberGeneratorImpl extends UniqueNumberGeneratorImpl{
 
     private void fillQueue(int size)
     {
-       // this.wLock.lock();
+
         try {
             IntStream.range(0,size).forEach((e)->{
                 try {
@@ -60,7 +59,7 @@ public class CachedUniqueNumberGeneratorImpl extends UniqueNumberGeneratorImpl{
             log.severe(ex.getMessage());
         }
         finally {
-           // this.wLock.unlock();
+
         }
 
 
@@ -69,7 +68,7 @@ public class CachedUniqueNumberGeneratorImpl extends UniqueNumberGeneratorImpl{
     @Override
     public long getNextLong() throws Exception {
         long retVal=-1l;
-        wLock.lock();
+        lock.lock();
         try
         {
             Long headValue=this.queue.peek();
@@ -88,7 +87,7 @@ public class CachedUniqueNumberGeneratorImpl extends UniqueNumberGeneratorImpl{
         } catch (Exception e) {
             throw e;
         } finally {
-            wLock.unlock();
+            lock.unlock();
         }
         return retVal;
     }
@@ -109,35 +108,6 @@ public class CachedUniqueNumberGeneratorImpl extends UniqueNumberGeneratorImpl{
                 //log.info("fill 2 - "+(upperLimit-counter));
                 fillQueue((int) (upperLimit-counter));
             }
-
-//            //log.info("Trying to fill up the queue");
-//            Thread t=new Thread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    try {
-//                        if(upperLimit-counter>cacheSize-queue.size())
-//                        {
-//                            log.info("fill 1");
-//                            fillQueue(cacheSize-queue.size());
-//                        }
-//                        else
-//                        {
-//                            log.info("fill 2");
-//                            fillQueue((int) (upperLimit-counter));
-//                        }
-//                       // log.info("Queue size is :"+queue.size());
-//
-//                            //log.info("The queue is filled up");
-//                    }
-//                    catch (Exception ex)
-//                    {
-//                        log.severe(ex.getMessage());
-//                    }
-//                }
-//            });
-//
-//            t.start();
-//            t.join();
         }
     }
 }

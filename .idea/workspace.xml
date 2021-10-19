@@ -254,7 +254,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CachedUniqueNumberGeneratorTest.getNextLongMultipleThreadsWithCacheSizeTest">
+  <component name="RunManager" selected="JUnit.CachedUniqueNumberGeneratorTest">
+    <configuration name="CachedUniqueNumberGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unum" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unum.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.unum" />
+      <option name="MAIN_CLASS_NAME" value="com.unum.CachedUniqueNumberGeneratorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CachedUniqueNumberGeneratorTest.getNextLongMultipleThreadsWithCacheSizeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="unum" />
       <extension name="coverage">
@@ -335,29 +350,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UniqueNumberGeneratorTest.getNextLongWithSingleGeneratorAndMultipleThreadsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="unum" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.unum.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.unum" />
-      <option name="MAIN_CLASS_NAME" value="com.unum.UniqueNumberGeneratorTest" />
-      <option name="METHOD_NAME" value="getNextLongWithSingleGeneratorAndMultipleThreadsTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CachedUniqueNumberGeneratorTest" />
         <item itemvalue="JUnit.CachedUniqueNumberGeneratorTest.getNextLongMultipleThreadsWithCacheSizeTest" />
         <item itemvalue="JUnit.CachedUniqueNumberGeneratorTest.getNextLongWithSingleGeneratorAndMultipleThreadsWithCacheSizeTest" />
         <item itemvalue="JUnit.CachedUniqueNumberGeneratorTest.getNextLongSingleThreadWithCacheSizeTest" />
         <item itemvalue="JUnit.CachedUniqueNumberGeneratorTest.getNextLongWithSingleGeneratorAndMultipleThreadsTest" />
-        <item itemvalue="JUnit.UniqueNumberGeneratorTest.getNextLongWithSingleGeneratorAndMultipleThreadsTest" />
       </list>
     </recent_temporary>
   </component>
