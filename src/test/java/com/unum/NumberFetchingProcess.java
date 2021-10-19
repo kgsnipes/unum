@@ -3,6 +3,8 @@ package com.unum;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
 class NumberFetchingProcess extends Thread{
 
@@ -25,9 +27,14 @@ class NumberFetchingProcess extends Thread{
     public void run() {
         try
         {
-            while(this.poolSize>0)
-            {
-                long num=this.generator.getNextLong();
+            LongStream.range(0,this.poolSize).forEach((e)->{
+                long num= 0;
+                try {
+                    num = this.generator.getNextLong();
+                } catch (Exception ex) {
+                    log.severe(ex.getMessage());
+                    ex.printStackTrace();
+                }
                 //FileUtils.write(new File("numbers.txt"),num+"\n","utf-8",true);
                 if(!this.acquiredNumbers.contains(num))
                 {
@@ -39,10 +46,9 @@ class NumberFetchingProcess extends Thread{
                 else
                 {
                     log.info("Number exists "+ num);
-                    break;
+                    return;
                 }
-
-            }
+            });
         }
         catch (Exception ex)
         {

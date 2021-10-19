@@ -1,7 +1,6 @@
 package com.unum;
 
 import com.unum.impl.CachedUniqueNumberGeneratorImpl;
-import com.unum.impl.UniqueNumberGeneratorImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -37,5 +36,62 @@ public class CachedUniqueNumberGeneratorTest {
         //log.info("Acquired Numbers "+process.getAcquiredNumbers().size());
         //log.info("Poolsize "+poolSize);
         Assertions.assertEquals(poolSize,process.getAcquiredNumbers().size(),"Not equal unique numbers");
+    }
+
+    @Test
+    public void getNextLongWithSingleGeneratorAndMultipleThreadsTest()throws  Exception
+    {
+        int poolSize=45000;
+        int distributedPool=15000;
+
+        UniqueNumberGenerator generator=getGenerator(3001,1,poolSize);
+
+        NumberFetchingProcess process1=new NumberFetchingProcess(distributedPool,generator);
+        NumberFetchingProcess process2=new NumberFetchingProcess(distributedPool,generator);
+        NumberFetchingProcess process3=new NumberFetchingProcess(distributedPool,generator);
+
+        process1.start();
+        process2.start();
+        process3.start();
+
+        process1.join();
+        process2.join();
+        process3.join();
+
+        //log.info("Acquired Numbers "+process.getAcquiredNumbers().size());
+        //log.info("Poolsize "+poolSize);
+        Assertions.assertEquals(distributedPool,process1.getAcquiredNumbers().size(),"Not equal unique numbers");
+        Assertions.assertEquals(distributedPool,process2.getAcquiredNumbers().size(),"Not equal unique numbers");
+        Assertions.assertEquals(distributedPool,process3.getAcquiredNumbers().size(),"Not equal unique numbers");
+    }
+
+    @Test
+    public void getNextLongMultipleThreadsTest()throws  Exception
+    {
+
+        int poolSize=50000;
+        UniqueNumberGenerator generator1=getGenerator(1001,1,poolSize);
+        UniqueNumberGenerator generator2=getGenerator(1002,1,poolSize);
+        UniqueNumberGenerator generator3=getGenerator(1003,1,poolSize);
+
+        NumberFetchingProcess process1=new NumberFetchingProcess(poolSize,generator1);
+        NumberFetchingProcess process2=new NumberFetchingProcess(poolSize,generator2);
+        NumberFetchingProcess process3=new NumberFetchingProcess(poolSize,generator3);
+
+        process1.start();
+        process2.start();
+        process3.start();
+
+        process1.join();
+        process2.join();
+        process3.join();
+
+        log.info("Acquired Numbers "+process1.getAcquiredNumbers().size());
+        log.info("Acquired Numbers "+process2.getAcquiredNumbers().size());
+        log.info("Acquired Numbers "+process3.getAcquiredNumbers().size());
+
+        Assertions.assertEquals(process1.getAcquiredNumbers().size(),poolSize,"Not equal unique numbers");
+        Assertions.assertEquals(process2.getAcquiredNumbers().size(),poolSize,"Not equal unique numbers");
+        Assertions.assertEquals(process3.getAcquiredNumbers().size(),poolSize,"Not equal unique numbers");
     }
 }
