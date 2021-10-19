@@ -6,7 +6,38 @@
 
     <groupId>io.github.kgsnipes</groupId>
     <artifactId>unum</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
+
+    <name>
+        unum - Unique Number Generator
+    </name>
+
+    <description>
+        With distributed systems being developed. There is a need to bring down the dependency to a database to generate unique numbers for creating a private key when lots of data needs to be stored in the database tables. This Java library is intended to provide a way of generating unique numbers on the fly in a distributed system.
+    </description>
+
+    <url>
+        https://github.com/kgsnipes/unum
+    </url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/kgsnipes/unum/blob/main/LICENSE</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>kaushik ganguly</name>
+            <email>kaushik.ganguly160486@gmail.com</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -46,10 +77,12 @@
             <extensions>true</extensions>
             <configuration>
                 <serverId>ossrh</serverId>
-                <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                 <autoReleaseAfterClose>true</autoReleaseAfterClose>
             </configuration>
         </plugin>
+
+
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
@@ -63,7 +96,6 @@
                 </execution>
             </executions>
         </plugin>
-
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
@@ -77,6 +109,8 @@
                 </execution>
             </executions>
         </plugin>
+
+
 
 
         <plugin>
@@ -107,12 +141,11 @@
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
             <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/
-            </url>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
 
