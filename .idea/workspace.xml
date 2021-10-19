@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9777934b-505c-4773-9d9e-01809155be7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueNumberGeneratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueNumberGeneratorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueNumberGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueNumberGeneratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,8 +22,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+            <state relative-caret-position="60">
+              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -40,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="83">
-              <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueNumberGeneratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="86">
-              <caret line="47" column="23" lean-forward="true" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+              <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,14 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueNumberGeneratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="130" column="86" selection-start-line="130" selection-start-column="86" selection-end-line="130" selection-end-column="86" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -84,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueNumberGeneratorImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="612">
+              <caret line="99" selection-start-line="99" selection-end-line="99" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#682#683#0" expanded="true" />
@@ -126,12 +133,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/unum/UniqueNumberGenerationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGenerationServiceImpl.java" />
         <option value="$PROJECT_DIR$/numbers.txt" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/unum/NumberFetchingProcess.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/unum/UniqueNumberGeneratorTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueNumberGeneratorImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueNumberGeneratorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueNumberGeneratorImpl.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -144,7 +152,23 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="unum" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="unum" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="unum" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="clean" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
@@ -374,21 +398,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CachedUniqueNumberGeneratorTest_getNextLongWithSingleGeneratorAndMultipleThreadsTest - 2021.10.19 at 07h 44m 32s.xml">
-      <configuration name="CachedUniqueNumberGeneratorTest.getNextLongWithSingleGeneratorAndMultipleThreadsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueNumberGeneratorTest_getNextLongWithSingleGeneratorAndMultipleThreadsTest - 2021.10.19 at 07h 49m 10s.xml">
-      <configuration name="UniqueNumberGeneratorTest.getNextLongWithSingleGeneratorAndMultipleThreadsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueNumberGeneratorTest_getNextLongWithSingleGeneratorAndMultipleThreadsTest - 2021.10.19 at 07h 49m 17s.xml">
-      <configuration name="UniqueNumberGeneratorTest.getNextLongWithSingleGeneratorAndMultipleThreadsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueNumberGeneratorTest_getNextLongWithSingleGeneratorAndMultipleThreadsTest - 2021.10.19 at 07h 49m 20s.xml">
-      <configuration name="UniqueNumberGeneratorTest.getNextLongWithSingleGeneratorAndMultipleThreadsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueNumberGeneratorTest_getNextLongWithSingleGeneratorAndMultipleThreadsTest - 2021.10.19 at 07h 49m 22s.xml">
-      <configuration name="UniqueNumberGeneratorTest.getNextLongWithSingleGeneratorAndMultipleThreadsTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UniqueNumberGeneratorTest_getNextLongWithSingleGeneratorAndMultipleThreadsTest - 2021.10.19 at 07h 49m 25s.xml">
       <configuration name="UniqueNumberGeneratorTest.getNextLongWithSingleGeneratorAndMultipleThreadsTest" configurationId="JUnit" />
     </history-entry>
@@ -404,12 +413,27 @@
     <history-entry file="CachedUniqueNumberGeneratorTest_getNextLongWithSingleGeneratorAndMultipleThreadsTest - 2021.10.19 at 07h 49m 45s.xml">
       <configuration name="CachedUniqueNumberGeneratorTest.getNextLongWithSingleGeneratorAndMultipleThreadsTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CachedUniqueNumberGeneratorTest_getNextLongSingleThreadWithCacheSizeTest - 2021.10.19 at 07h 54m 01s.xml">
+      <configuration name="CachedUniqueNumberGeneratorTest.getNextLongSingleThreadWithCacheSizeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CachedUniqueNumberGeneratorTest_getNextLongWithSingleGeneratorAndMultipleThreadsWithCacheSizeTest - 2021.10.19 at 07h 54m 07s.xml">
+      <configuration name="CachedUniqueNumberGeneratorTest.getNextLongWithSingleGeneratorAndMultipleThreadsWithCacheSizeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CachedUniqueNumberGeneratorTest_getNextLongMultipleThreadsWithCacheSizeTest - 2021.10.19 at 07h 54m 18s.xml">
+      <configuration name="CachedUniqueNumberGeneratorTest.getNextLongMultipleThreadsWithCacheSizeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CachedUniqueNumberGeneratorTest - 2021.10.19 at 07h 56m 38s.xml">
+      <configuration name="CachedUniqueNumberGeneratorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CachedUniqueNumberGeneratorTest - 2021.10.19 at 07h 56m 53s.xml">
+      <configuration name="CachedUniqueNumberGeneratorTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-155" width="1865" height="1055" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19473396" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19473396" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -418,7 +442,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32810867" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32810867" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39916405" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -432,7 +456,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.32976446" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.32967636" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -470,13 +494,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/NumberFetchingProcess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
@@ -487,7 +504,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="83">
-          <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -497,7 +514,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueNumberGeneratorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
-          <caret line="47" column="23" lean-forward="true" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -506,8 +523,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueNumberGeneratorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+        <state relative-caret-position="612">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#682#683#0" expanded="true" />
@@ -518,11 +535,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueNumberGeneratorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="130" column="86" selection-start-line="130" selection-start-column="86" selection-end-line="130" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -611,5 +639,11 @@
         </settings>
       </state>
     </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="$PROJECT_DIR$" />
+    <option value="deploy" />
+    <option value="package -Dgpg.passphrase=billy123" />
+    <option value="clean deploy" />
   </component>
 </project>
