@@ -5,13 +5,11 @@ import com.google.common.collect.EvictingQueue;
 import java.util.Objects;
 import java.util.Queue;
 import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.logging.Logger;
 import java.util.stream.IntStream;
 
-public class CachedUniqueNumberGeneratorImpl extends UniqueNumberGeneratorImpl{
+public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGeneratorImpl{
 
     private final static Logger log=Logger.getLogger("CachedUniqueNumberGeneratorImpl");
 
@@ -19,7 +17,7 @@ public class CachedUniqueNumberGeneratorImpl extends UniqueNumberGeneratorImpl{
     private Queue<Long> queue;
     private Lock lock=new ReentrantLock();
 
-    public CachedUniqueNumberGeneratorImpl(int generatorIdentifier, int instance, int poolsize) throws Exception {
+    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance, int poolsize) throws Exception {
         super(generatorIdentifier, instance, poolsize);
 
         if (poolsize < this.cacheSize)
@@ -30,7 +28,7 @@ public class CachedUniqueNumberGeneratorImpl extends UniqueNumberGeneratorImpl{
         this.fillQueue(this.cacheSize);
     }
 
-    public CachedUniqueNumberGeneratorImpl(int generatorIdentifier, int instance, int poolsize,int cacheSize) throws Exception {
+    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance, int poolsize,int cacheSize) throws Exception {
         super(generatorIdentifier, instance, poolsize);
         this.cacheSize=cacheSize;
         this.initQueue();
