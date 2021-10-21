@@ -3,19 +3,14 @@ package com.unum.impl;
 
 
 import com.unum.UniqueNumberGenerator;
-
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.logging.Logger;
 
 public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
 
-    private final static Logger log=Logger.getLogger("UniqueNumberGeneratorImpl");
-
-    private int generatorIdentifier;// upper limit 35k - 16 bits
+    private int generatorIdentifier;
     protected int counter;
-    private int instance;//upper limit 128 - 8 bits
+    private int instance;
     protected int upperLimit;
-    //private long LONG_LONG_COUNTER_MAX_VALUE=1099511627775l; //this value consumes 40 bits.
     private ReentrantLock lock=new ReentrantLock();
 
     public UniqueNumberGeneratorImpl(int generatorIdentifier, int instance, int poolsize) throws Exception {
@@ -54,15 +49,10 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
     private int generateLong()
     {
         int retVal=this.generatorIdentifier;
-        //displayLongInBinary(retVal);
         retVal=retVal<<8;
-        //displayLongInBinary(retVal);
         retVal=retVal|instance;
-       // displayLongInBinary(retVal);
         retVal=retVal<<8;
-       // displayLongInBinary(retVal);
         retVal=retVal|counter;
-       displayInBinary(retVal);
         return retVal;
     }
 
@@ -78,26 +68,4 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         }
 
     }
-
-//    private void displayInBinary(long value)
-//    {
-//        int arr[]=new int[64];
-//
-//        for(int i=arr.length-1;i>-1;i--)
-//        {
-//            arr[i]=(int)value%2;
-//            value=value/2;
-//        }
-//
-//        StringBuilder builder=new StringBuilder();
-//
-//
-//        for(int i=0;i<arr.length;i++)
-//        {
-//            builder.append(arr[i]==1?"1":"0");
-//        }
-//        log.info(builder.toString());
-//
-//    }
-
 }

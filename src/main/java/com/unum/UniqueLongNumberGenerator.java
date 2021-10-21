@@ -6,6 +6,7 @@ public interface UniqueLongNumberGenerator {
     long LONG_MAX_IDENTIFIER_VALUE=35000;// upper limit 35k - 16 bits
     long LONG_INSTANCE_MAX_VALUE=128;//upper limit 128 - 8 bits
 
+
     long getNextLong() throws Exception;
 
     default String displayInBinary(long value)

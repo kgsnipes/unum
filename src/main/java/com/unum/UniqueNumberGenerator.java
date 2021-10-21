@@ -10,7 +10,7 @@ public interface UniqueNumberGenerator {
 
     default String displayInBinary(int value)
     {
-        int arr[]=new int[64];
+        int arr[]=new int[32];
 
         for(int i=arr.length-1;i>-1;i--)
         {
