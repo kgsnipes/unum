@@ -6,14 +6,14 @@ import java.util.logging.Logger;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
-class NumberFetchingProcess extends Thread{
+class LongNumberFetchingProcess extends Thread{
 
     private Logger log=Logger.getLogger("NumberFetchingProcess");
     private long poolSize;
-    private UniqueNumberGenerator generator;
+    private UniqueLongNumberGenerator generator;
     private List<Long> acquiredNumbers=new ArrayList<>();
 
-    public NumberFetchingProcess(long poolSize, UniqueNumberGenerator generator) {
+    public LongNumberFetchingProcess(long poolSize, UniqueLongNumberGenerator generator) {
         this.poolSize = poolSize;
         this.generator = generator;
     }

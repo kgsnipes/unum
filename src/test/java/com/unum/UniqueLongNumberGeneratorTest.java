@@ -1,5 +1,6 @@
 package com.unum;
 
+import com.unum.impl.UniqueLongNumberGeneratorImpl;
 import com.unum.impl.UniqueNumberGeneratorImpl;
 
 import org.junit.jupiter.api.Assertions;
@@ -13,17 +14,17 @@ import java.util.List;
 import java.util.logging.Logger;
 
 
-public class UniqueNumberGeneratorTest {
+public class UniqueLongNumberGeneratorTest {
 
     private Logger log=Logger.getLogger("UniqueNumberGeneratorTest");
 
 
-    private UniqueNumberGenerator getGenerator(int identifier,int instance,int pool)
+    private UniqueLongNumberGenerator getGenerator(int identifier,int instance,int pool)
     {
-        UniqueNumberGenerator generator=null;
+        UniqueLongNumberGenerator generator=null;
         try
         {
-            generator=new UniqueNumberGeneratorImpl(identifier,instance,pool);
+            generator=new UniqueLongNumberGeneratorImpl(identifier,instance,pool);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -36,7 +37,7 @@ public class UniqueNumberGeneratorTest {
 
     @Test
     public void getNextLongTest() throws Exception {
-        UniqueNumberGenerator generator=getGenerator(1001,1,1000);
+        UniqueLongNumberGenerator generator=getGenerator(1001,1,1000);
         Assertions.assertNotNull(generator.getNextLong());
     }
 
@@ -44,7 +45,7 @@ public class UniqueNumberGeneratorTest {
     public void getNextLongSingleThreadTest()throws  Exception
     {
         int poolSize=50000;
-       NumberFetchingProcess process=new NumberFetchingProcess(poolSize,getGenerator(3001,1,poolSize));
+        LongNumberFetchingProcess process=new LongNumberFetchingProcess(poolSize,getGenerator(3001,1,poolSize));
        process.start();
        process.join();
        //log.info("Acquired Numbers "+process.getAcquiredNumbers().size());
@@ -58,11 +59,11 @@ public class UniqueNumberGeneratorTest {
         int poolSize=45000;
         int distributedPool=15000;
 
-        UniqueNumberGenerator generator=getGenerator(3001,1,poolSize);
+        UniqueLongNumberGenerator generator=getGenerator(3001,1,poolSize);
 
-        NumberFetchingProcess process1=new NumberFetchingProcess(distributedPool,generator);
-        NumberFetchingProcess process2=new NumberFetchingProcess(distributedPool,generator);
-        NumberFetchingProcess process3=new NumberFetchingProcess(distributedPool,generator);
+        LongNumberFetchingProcess process1=new LongNumberFetchingProcess(distributedPool,generator);
+        LongNumberFetchingProcess process2=new LongNumberFetchingProcess(distributedPool,generator);
+        LongNumberFetchingProcess process3=new LongNumberFetchingProcess(distributedPool,generator);
 
         process1.start();
         process2.start();
@@ -84,10 +85,10 @@ public class UniqueNumberGeneratorTest {
     {
 
         int poolSize=1000;
-        UniqueNumberGenerator generator1=getGenerator(1001,1,poolSize);
-        UniqueNumberGenerator generator2=getGenerator(1002,1,poolSize);
-        NumberFetchingProcess process1=new NumberFetchingProcess(poolSize,generator1);
-        NumberFetchingProcess process2=new NumberFetchingProcess(poolSize,generator2);
+        UniqueLongNumberGenerator generator1=getGenerator(1001,1,poolSize);
+        UniqueLongNumberGenerator generator2=getGenerator(1002,1,poolSize);
+        LongNumberFetchingProcess process1=new LongNumberFetchingProcess(poolSize,generator1);
+        LongNumberFetchingProcess process2=new LongNumberFetchingProcess(poolSize,generator2);
         process1.start();
         process2.start();
         process1.join();

@@ -62,7 +62,7 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         retVal=retVal<<8;
        // displayLongInBinary(retVal);
         retVal=retVal|counter;
-       // displayLongInBinary(retVal);
+       displayInBinary(retVal);
         return retVal;
     }
 
