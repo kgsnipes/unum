@@ -16,8 +16,8 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
     private Queue<Long> queue;
     private Lock lock=new ReentrantLock();
 
-    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance, int poolsize) throws Exception {
-        super(generatorIdentifier, instance, poolsize);
+    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance,int startPoint, int poolsize) throws Exception {
+        super(generatorIdentifier, instance,startPoint, poolsize);
 
         if (poolsize < this.cacheSize)
         {
@@ -27,8 +27,8 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
         this.fillQueue(this.cacheSize);
     }
 
-    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance, int poolsize,int cacheSize) throws Exception {
-        super(generatorIdentifier, instance, poolsize);
+    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance,int startPoint, int poolsize,int cacheSize) throws Exception {
+        super(generatorIdentifier, instance,startPoint,  poolsize);
         this.cacheSize=cacheSize;
         this.initQueue();
         this.fillQueue(this.cacheSize);

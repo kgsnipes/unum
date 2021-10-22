@@ -19,12 +19,12 @@ public class UniqueLongNumberGeneratorTest {
     private Logger log=Logger.getLogger("UniqueNumberGeneratorTest");
 
 
-    private UniqueLongNumberGenerator getGenerator(int identifier,int instance,int pool)
+    private UniqueLongNumberGenerator getGenerator(int identifier,int instance,int startPoint,int pool)
     {
         UniqueLongNumberGenerator generator=null;
         try
         {
-            generator=new UniqueLongNumberGeneratorImpl(identifier,instance,pool);
+            generator=new UniqueLongNumberGeneratorImpl(identifier,instance,startPoint,pool);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -37,7 +37,7 @@ public class UniqueLongNumberGeneratorTest {
 
     @Test
     public void getNextLongTest() throws Exception {
-        UniqueLongNumberGenerator generator=getGenerator(1001,1,1000);
+        UniqueLongNumberGenerator generator=getGenerator(1001,1,-1,1000);
         Assertions.assertNotNull(generator.getNextLong());
     }
 
@@ -45,7 +45,7 @@ public class UniqueLongNumberGeneratorTest {
     public void getNextLongSingleThreadTest()throws  Exception
     {
         int poolSize=50000;
-        LongNumberFetchingProcess process=new LongNumberFetchingProcess(poolSize,getGenerator(3001,1,poolSize));
+        LongNumberFetchingProcess process=new LongNumberFetchingProcess(poolSize,getGenerator(3001,1,-1,poolSize));
        process.start();
        process.join();
        //log.info("Acquired Numbers "+process.getAcquiredNumbers().size());
@@ -59,7 +59,7 @@ public class UniqueLongNumberGeneratorTest {
         int poolSize=45000;
         int distributedPool=15000;
 
-        UniqueLongNumberGenerator generator=getGenerator(3001,1,poolSize);
+        UniqueLongNumberGenerator generator=getGenerator(3001,1,-1,poolSize);
 
         LongNumberFetchingProcess process1=new LongNumberFetchingProcess(distributedPool,generator);
         LongNumberFetchingProcess process2=new LongNumberFetchingProcess(distributedPool,generator);
@@ -85,8 +85,8 @@ public class UniqueLongNumberGeneratorTest {
     {
 
         int poolSize=1000;
-        UniqueLongNumberGenerator generator1=getGenerator(1001,1,poolSize);
-        UniqueLongNumberGenerator generator2=getGenerator(1002,1,poolSize);
+        UniqueLongNumberGenerator generator1=getGenerator(1001,1,-1,poolSize);
+        UniqueLongNumberGenerator generator2=getGenerator(1002,1,-1,poolSize);
         LongNumberFetchingProcess process1=new LongNumberFetchingProcess(poolSize,generator1);
         LongNumberFetchingProcess process2=new LongNumberFetchingProcess(poolSize,generator2);
         process1.start();
