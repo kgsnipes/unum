@@ -46,7 +46,7 @@
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.login>9c3be2f2a3f1b914f7a1f222a491b81768a2cd95</sonar.login>
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-        <sonar.exclusions>*Test</sonar.exclusions>
+        <sonar.exclusions>**/*Test.java</sonar.exclusions>
         <sonar.language>java</sonar.language>
     </properties>
     <dependencies>

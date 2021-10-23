@@ -41,7 +41,7 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
         this.upperLimit=poolsize==-1?LONG_COUNTER_MAX_VALUE:poolsize;
     }
 
-    protected long generate() throws Exception {
+    protected long generate() throws UnumException {
         long retVal=generateLong();
 
         if(this.counter<this.upperLimit)
