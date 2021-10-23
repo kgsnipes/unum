@@ -24,7 +24,7 @@ public interface UniqueNumberGenerator {
      */
     default String displayInBinary(int value)
     {
-        int arr[]=new int[32];
+        int[] arr=new int[32];
         StringBuilder builder=new StringBuilder();
 
         for(int i=arr.length-1;i>-1;i--)

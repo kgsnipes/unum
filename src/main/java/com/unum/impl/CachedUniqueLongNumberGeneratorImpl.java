@@ -17,7 +17,7 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
     private Queue<Long> queue;
     private Lock lock=new ReentrantLock();
 
-    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance,long startPoint, int poolsize) throws Exception {
+    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance,long startPoint, int poolsize) throws UnumException {
         super(generatorIdentifier, instance,startPoint, poolsize);
 
         if (poolsize < this.cacheSize)
@@ -28,7 +28,7 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
         this.fillQueue(this.cacheSize);
     }
 
-    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance,long startPoint, int poolsize,int cacheSize) throws Exception {
+    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance,long startPoint, int poolsize,int cacheSize) throws UnumException {
         super(generatorIdentifier, instance,startPoint,  poolsize);
         this.cacheSize=cacheSize;
         this.initQueue();
@@ -44,7 +44,7 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
     {
 
         try {
-            IntStream.range(0,size).forEach((e)->{
+            IntStream.range(0,size).forEach(e->{
                 try {
                     this.queue.add(this.generate());
                 } catch (Exception ex) {
@@ -56,21 +56,17 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
         {
             ex.printStackTrace();
         }
-        finally {
-
-        }
-
 
     }
 
     @Override
-    public long getNext() throws Exception {
+    public long getNext() throws UnumException {
         long retVal=-1l;
         lock.lock();
         try
         {
             Long headValue=this.queue.peek();
-            if(this.queue.size()>0 && Objects.nonNull(headValue))
+            if(!this.queue.isEmpty() && Objects.nonNull(headValue))
             {
                 retVal=this.queue.remove();
                 tryFillingTheQueue();
@@ -81,14 +77,14 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
             }
 
         } catch (Exception e) {
-            throw e;
+            throw new UnumException(e.getMessage(),e);
         } finally {
             lock.unlock();
         }
         return retVal;
     }
 
-    private void tryFillingTheQueue() throws InterruptedException {
+    private void tryFillingTheQueue() {
 
 
         if(this.queue.size()<this.cacheSize/2 && this.counter<this.upperLimit)

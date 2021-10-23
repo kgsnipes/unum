@@ -25,7 +25,7 @@ public interface UniqueLongNumberGenerator {
      */
     default String displayInBinary(long value)
     {
-        int arr[]=new int[64];
+        int[] arr=new int[64];
         StringBuilder builder=new StringBuilder();
         for(int i=arr.length-1;i>-1;i--)
         {

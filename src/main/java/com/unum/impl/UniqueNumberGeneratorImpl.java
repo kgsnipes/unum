@@ -15,7 +15,7 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
     protected int upperLimit;
     private ReentrantLock lock=new ReentrantLock();
 
-    public UniqueNumberGeneratorImpl(int generatorIdentifier, int instance,int startPoint, int poolsize) throws Exception {
+    public UniqueNumberGeneratorImpl(int generatorIdentifier, int instance,int startPoint, int poolsize) throws UnumException {
 
         if(generatorIdentifier<1 || generatorIdentifier>MAX_IDENTIFIER_VALUE)
         {
@@ -69,7 +69,7 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         return retVal;
     }
 
-    public int getNext() throws Exception {
+    public int getNext() throws UnumException {
         try
         {
             lock.lock();
