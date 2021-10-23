@@ -41,6 +41,13 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <sonar.projectKey>unum</sonar.projectKey>
+        <sonar.organization>kgsnipes</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>9c3be2f2a3f1b914f7a1f222a491b81768a2cd95</sonar.login>
+        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+        <sonar.exclusions></sonar.exclusions>
+        <sonar.language>java</sonar.language>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
@@ -142,6 +149,34 @@
                         <keyname>${gpg.keyname}</keyname>
                         <passphraseServerId>${gpg.passphrase}</passphraseServerId>
                     </configuration>
+                </execution>
+            </executions>
+        </plugin>
+
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.2</version>
+        </plugin>
+
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.5</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+                <!-- attached to Maven test phase -->
+                <execution>
+                    <id>report</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
                 </execution>
             </executions>
         </plugin>
