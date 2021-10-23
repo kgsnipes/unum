@@ -1,5 +1,7 @@
 package com.unum;
 
+import com.unum.exception.UnumException;
+
 /**
  * @author kaushik.ganguly
  * The UniqueNumberGenerator interface defines methods and constraints that are applicable for using this generator.
@@ -13,7 +15,7 @@ public interface UniqueNumberGenerator {
     int MAX_IDENTIFIER_VALUE=255;// upper limit 255 - 8 bits
     int INSTANCE_MAX_VALUE=255;//upper limit 128 - 8 bits
 
-    int getNext() throws Exception;
+    int getNext() throws UnumException;
 
     /**
      * this helps print numbers in binary representation

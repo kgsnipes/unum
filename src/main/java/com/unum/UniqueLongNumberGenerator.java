@@ -1,5 +1,7 @@
 package com.unum;
 
+import com.unum.exception.UnumException;
+
 /**
  * @author kaushik.ganguly
  * The UniqueLongNumberGenerator interface defines methods and constraints that are applicable for using this generator.
@@ -14,7 +16,7 @@ public interface UniqueLongNumberGenerator {
     long LONG_INSTANCE_MAX_VALUE=128;//upper limit 128 - 8 bits
 
 
-    long getNext() throws Exception;
+    long getNext() throws UnumException;
 
     /**
      * this helps print numbers in binary representation
