@@ -40,21 +40,19 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
         this.queue= EvictingQueue.create(this.cacheSize);
     }
 
-    private void fillQueue(int size)
-    {
+    private void fillQueue(int size) throws UnumException {
 
         try {
-            IntStream.range(0,size).forEach(e->{
-                try {
-                    this.queue.add(this.generate());
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            });
+
+            for(int i=0;i<size;i++)
+            {
+                this.queue.add(this.generate());
+            }
+           
         }
         catch (Exception ex)
         {
-            ex.printStackTrace();
+            throw new UnumException(ex.getMessage(),ex);
         }
 
     }
@@ -84,7 +82,7 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
         return retVal;
     }
 
-    private void tryFillingTheQueue() {
+    private void tryFillingTheQueue() throws UnumException {
 
 
         if(this.queue.size()<this.cacheSize/2 && this.counter<this.upperLimit)
