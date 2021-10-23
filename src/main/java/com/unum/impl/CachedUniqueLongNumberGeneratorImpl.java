@@ -63,7 +63,7 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
     }
 
     @Override
-    public long getNextLong() throws Exception {
+    public long getNext() throws Exception {
         long retVal=-1l;
         lock.lock();
         try

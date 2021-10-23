@@ -63,7 +63,7 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
         return retVal;
     }
 
-    public long getNextLong() throws Exception {
+    public long getNext() throws Exception {
         try
         {
             lock.lock();

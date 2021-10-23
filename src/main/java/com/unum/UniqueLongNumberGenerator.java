@@ -7,7 +7,7 @@ public interface UniqueLongNumberGenerator {
     long LONG_INSTANCE_MAX_VALUE=128;//upper limit 128 - 8 bits
 
 
-    long getNextLong() throws Exception;
+    long getNext() throws Exception;
 
     default String displayInBinary(long value)
     {
