@@ -1,5 +1,6 @@
 package com.unum;
 
+import com.unum.exception.UnumException;
 import com.unum.impl.UniqueLongNumberGeneratorImpl;
 import com.unum.impl.UniqueNumberGeneratorImpl;
 
@@ -19,19 +20,8 @@ public class UniqueLongNumberGeneratorTest {
     private Logger log=Logger.getLogger("UniqueNumberGeneratorTest");
 
 
-    private UniqueLongNumberGenerator getGenerator(int identifier,int instance,int startPoint,int pool)
-    {
-        UniqueLongNumberGenerator generator=null;
-        try
-        {
-            generator=new UniqueLongNumberGeneratorImpl(identifier,instance,startPoint,pool);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-
-        }
-
-        return generator;
+    private UniqueLongNumberGenerator getGenerator(int identifier,int instance,long startPoint,int pool) throws Exception {
+        return new UniqueLongNumberGeneratorImpl(identifier,instance,startPoint,pool);
     }
 
 
@@ -98,6 +88,17 @@ public class UniqueLongNumberGeneratorTest {
 
         Assertions.assertEquals(process1.getAcquiredNumbers().size(),poolSize,"Not equal unique numbers");
         Assertions.assertEquals(process2.getAcquiredNumbers().size(),poolSize,"Not equal unique numbers");
+    }
+
+
+    @Test
+    public void getNextLongTestWithException(){
+
+        Assertions.assertThrows(UnumException.class,()->{
+            UniqueLongNumberGenerator generator=getGenerator(1001,1,UniqueLongNumberGenerator.LONG_COUNTER_MAX_VALUE+1,1000);
+        });
+
+
     }
 }
 

@@ -2,6 +2,7 @@ package com.unum.impl;
 
 import com.google.common.collect.EvictingQueue;
 import com.unum.CachedUniqueLongNumberGenerator;
+import com.unum.exception.UnumException;
 
 import java.util.Objects;
 import java.util.Queue;
@@ -16,7 +17,7 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
     private Queue<Long> queue;
     private Lock lock=new ReentrantLock();
 
-    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance,int startPoint, int poolsize) throws Exception {
+    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance,long startPoint, int poolsize) throws Exception {
         super(generatorIdentifier, instance,startPoint, poolsize);
 
         if (poolsize < this.cacheSize)
@@ -27,7 +28,7 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
         this.fillQueue(this.cacheSize);
     }
 
-    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance,int startPoint, int poolsize,int cacheSize) throws Exception {
+    public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance,long startPoint, int poolsize,int cacheSize) throws Exception {
         super(generatorIdentifier, instance,startPoint,  poolsize);
         this.cacheSize=cacheSize;
         this.initQueue();
@@ -76,7 +77,7 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
             }
             else
             {
-                throw new Exception("Not able to generate a number.");
+                throw new UnumException("Not able to generate a number.");
             }
 
         } catch (Exception e) {

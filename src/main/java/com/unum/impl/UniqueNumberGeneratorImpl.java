@@ -3,6 +3,8 @@ package com.unum.impl;
 
 
 import com.unum.UniqueNumberGenerator;
+import com.unum.exception.UnumException;
+
 import java.util.concurrent.locks.ReentrantLock;
 
 public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
@@ -13,22 +15,32 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
     protected int upperLimit;
     private ReentrantLock lock=new ReentrantLock();
 
-    public UniqueNumberGeneratorImpl(int generatorIdentifier, int instance, int poolsize) throws Exception {
+    public UniqueNumberGeneratorImpl(int generatorIdentifier, int instance,int startPoint, int poolsize) throws Exception {
 
         if(generatorIdentifier<1 || generatorIdentifier>MAX_IDENTIFIER_VALUE)
         {
-            throw new Exception("Identifier can be between 1 and 35,000");
+            throw new UnumException("Identifier can be between 1 and 35,000");
         }
         if(instance<0 || instance>INSTANCE_MAX_VALUE)
         {
-            throw new Exception("Instance number can range from 0 to 128");
+            throw new UnumException("Instance number can range from 0 to 128");
         }
         this.generatorIdentifier=generatorIdentifier;
         this.instance = instance;
 
+        if(startPoint>0 && startPoint+poolsize<=COUNTER_MAX_VALUE)
+        {
+            this.counter=startPoint;
+        }
+        else if(startPoint>0 && startPoint+poolsize>COUNTER_MAX_VALUE)
+        {
+            throw new UnumException("the starting point should be greater than 0 and less than startpoint+poolsize less than "+COUNTER_MAX_VALUE);
+        }
+
+
         if(poolsize>COUNTER_MAX_VALUE)
         {
-            throw new Exception("The pool size cannot be more than "+COUNTER_MAX_VALUE);
+            throw new UnumException("The pool size cannot be more than "+COUNTER_MAX_VALUE);
         }
         this.upperLimit=poolsize==-1?COUNTER_MAX_VALUE:poolsize;
     }
@@ -42,7 +54,7 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         }
         else
         {
-            throw new Exception("Cannot produce more than the pool size of "+this.upperLimit);
+            throw new UnumException("Cannot produce more than the pool size of "+this.upperLimit);
         }
         return retVal;
     }
@@ -63,7 +75,7 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
             lock.lock();
             return generate();
         } catch (Exception e) {
-            throw e;
+            throw new UnumException(e.getMessage(),e);
         } finally {
             lock.unlock();
         }
