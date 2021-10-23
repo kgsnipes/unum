@@ -30,7 +30,7 @@ class LongNumberFetchingProcess extends Thread{
             LongStream.range(0,this.poolSize).forEach((e)->{
                 long num= 0;
                 try {
-                    num = this.generator.getNextLong();
+                    num = this.generator.getNext();
                 } catch (Exception ex) {
                     log.severe(ex.getMessage());
                     ex.printStackTrace();

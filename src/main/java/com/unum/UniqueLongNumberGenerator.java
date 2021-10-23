@@ -1,5 +1,12 @@
 package com.unum;
 
+/**
+ * @author kaushik.ganguly
+ * The UniqueLongNumberGenerator interface defines methods and constraints that are applicable for using this generator.
+ *  There can be a max of 128 instances for a given identifier.
+ *  There can be a max of 35000 as the generator identifier.
+ *  There can be a max of 1099511627775 numbers that can be generated from the generator.
+ */
 public interface UniqueLongNumberGenerator {
 
     long LONG_COUNTER_MAX_VALUE=1099511627775l; //this value consumes 40 bits.
@@ -9,23 +16,21 @@ public interface UniqueLongNumberGenerator {
 
     long getNext() throws Exception;
 
+    /**
+     * this helps print numbers in binary representation
+     * @param value
+     * @return a string binary representation of the number
+     */
     default String displayInBinary(long value)
     {
         int arr[]=new int[64];
-
+        StringBuilder builder=new StringBuilder();
         for(int i=arr.length-1;i>-1;i--)
         {
             arr[i]=(int)value%2;
             value=value/2;
-        }
-
-        StringBuilder builder=new StringBuilder();
-
-
-        for(int i=0;i<arr.length;i++)
-        {
             builder.append(arr[i]==1?"1":"0");
         }
-        return builder.toString();
+        return builder.reverse().toString();
     }
 }

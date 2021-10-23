@@ -38,7 +38,7 @@ public class UniqueLongNumberGeneratorTest {
     @Test
     public void getNextLongTest() throws Exception {
         UniqueLongNumberGenerator generator=getGenerator(1001,1,-1,1000);
-        Assertions.assertNotNull(generator.getNextLong());
+        Assertions.assertNotNull(generator.getNext());
     }
 
     @Test

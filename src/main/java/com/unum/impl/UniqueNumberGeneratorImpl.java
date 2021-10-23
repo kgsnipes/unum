@@ -14,6 +14,7 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
     private ReentrantLock lock=new ReentrantLock();
 
     public UniqueNumberGeneratorImpl(int generatorIdentifier, int instance, int poolsize) throws Exception {
+
         if(generatorIdentifier<1 || generatorIdentifier>MAX_IDENTIFIER_VALUE)
         {
             throw new Exception("Identifier can be between 1 and 35,000");
