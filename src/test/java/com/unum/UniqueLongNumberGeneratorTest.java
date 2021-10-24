@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 
-public class UniqueLongNumberGeneratorTest {
+class UniqueLongNumberGeneratorTest {
 
     private Logger log=Logger.getLogger("UniqueNumberGeneratorTest");
 
@@ -26,13 +26,13 @@ public class UniqueLongNumberGeneratorTest {
 
 
     @Test
-    public void getNextLongTest() throws Exception {
+     void getNextLongTest() throws Exception {
         UniqueLongNumberGenerator generator=getGenerator(1001,1,-1,1000);
         Assertions.assertNotEquals(-1l,generator.getNext());
     }
 
     @Test
-    public void getNextLongSingleThreadTest()throws  Exception
+     void getNextLongSingleThreadTest()throws  Exception
     {
         int poolSize=50000;
         LongNumberFetchingProcess process=new LongNumberFetchingProcess(poolSize,getGenerator(3001,1,-1,poolSize));
@@ -44,7 +44,7 @@ public class UniqueLongNumberGeneratorTest {
     }
 
     @Test
-    public void getNextLongWithSingleGeneratorAndMultipleThreadsTest()throws  Exception
+     void getNextLongWithSingleGeneratorAndMultipleThreadsTest()throws  Exception
     {
         int poolSize=45000;
         int distributedPool=15000;
@@ -71,7 +71,7 @@ public class UniqueLongNumberGeneratorTest {
     }
 
     @Test
-    public void getNextLongMultipleThreadsTest()throws  Exception
+     void getNextLongMultipleThreadsTest()throws  Exception
     {
 
         int poolSize=1000;
@@ -92,7 +92,7 @@ public class UniqueLongNumberGeneratorTest {
 
 
     @Test
-    public void getNextLongTestWithException(){
+     void getNextLongTestWithException(){
 
         Assertions.assertThrows(UnumException.class,()->{
             UniqueLongNumberGenerator generator=getGenerator(1001,1,UniqueLongNumberGenerator.LONG_COUNTER_MAX_VALUE+1,1000);

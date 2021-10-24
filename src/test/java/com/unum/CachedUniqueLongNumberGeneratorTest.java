@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.logging.Logger;
 
-public class CachedUniqueLongNumberGeneratorTest {
+class CachedUniqueLongNumberGeneratorTest {
 
     private Logger log=Logger.getLogger("CachedUniqueNumberGeneratorTest");
 
@@ -42,7 +42,7 @@ public class CachedUniqueLongNumberGeneratorTest {
     }
 
     @Test
-    public void getNextLongSingleThreadTest()throws  Exception
+     void getNextLongSingleThreadTest()throws  Exception
     {
         int poolSize=50000;
         LongNumberFetchingProcess process=new LongNumberFetchingProcess(poolSize,getGenerator(3001,1,-1,poolSize));
@@ -54,7 +54,7 @@ public class CachedUniqueLongNumberGeneratorTest {
     }
 
     @Test
-    public void getNextLongWithSingleGeneratorAndMultipleThreadsTest()throws  Exception
+     void getNextLongWithSingleGeneratorAndMultipleThreadsTest()throws  Exception
     {
         int poolSize=45000;
         int distributedPool=15000;
@@ -81,7 +81,7 @@ public class CachedUniqueLongNumberGeneratorTest {
     }
 
     @Test
-    public void getNextLongMultipleThreadsTest()throws  Exception
+     void getNextLongMultipleThreadsTest()throws  Exception
     {
 
         int poolSize=50000;
@@ -111,7 +111,7 @@ public class CachedUniqueLongNumberGeneratorTest {
     }
 
     @Test
-    public void getNextLongSingleThreadWithCacheSizeTest()throws  Exception
+     void getNextLongSingleThreadWithCacheSizeTest()throws  Exception
     {
         int poolSize=50000;
         LongNumberFetchingProcess process=new LongNumberFetchingProcess(poolSize,getGeneratorWithCacheSize(3001,1,-1,poolSize,2000));
@@ -123,7 +123,7 @@ public class CachedUniqueLongNumberGeneratorTest {
     }
 
     @Test
-    public void getNextLongWithSingleGeneratorAndMultipleThreadsWithCacheSizeTest()throws  Exception
+     void getNextLongWithSingleGeneratorAndMultipleThreadsWithCacheSizeTest()throws  Exception
     {
         int poolSize=45000;
         int distributedPool=15000;
@@ -150,7 +150,7 @@ public class CachedUniqueLongNumberGeneratorTest {
     }
 
     @Test
-    public void getNextLongMultipleThreadsWithCacheSizeTest()throws  Exception
+     void getNextLongMultipleThreadsWithCacheSizeTest()throws  Exception
     {
 
         int poolSize=50000;

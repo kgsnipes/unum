@@ -48,7 +48,7 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
             {
                 this.queue.add(this.generate());
             }
-           
+
         }
         catch (Exception ex)
         {
