@@ -8,7 +8,6 @@ import java.util.Objects;
 import java.util.Queue;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.stream.IntStream;
 
 public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGeneratorImpl implements CachedUniqueLongNumberGenerator {
 
