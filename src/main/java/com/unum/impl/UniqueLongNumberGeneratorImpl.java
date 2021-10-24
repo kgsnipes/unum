@@ -14,7 +14,7 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
     protected long upperLimit;
     private ReentrantLock lock=new ReentrantLock();
 
-    public UniqueLongNumberGeneratorImpl(int generatorIdentifier,int instance,long startPoint,int poolsize) throws UnumException {
+    public UniqueLongNumberGeneratorImpl(int generatorIdentifier,int instance,long startPoint,long poolsize) throws UnumException {
         if(generatorIdentifier<1 || generatorIdentifier>LONG_MAX_IDENTIFIER_VALUE)
         {
             throw new UnumException("Identifier can be between 1 and "+LONG_MAX_IDENTIFIER_VALUE);
@@ -26,10 +26,11 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
         this.generatorIdentifier=generatorIdentifier;
         this.instance = instance;
 
-        if(poolsize>LONG_COUNTER_MAX_VALUE)
+        if(poolsize>LONG_COUNTER_MAX_VALUE || startPoint+poolsize>=LONG_COUNTER_MAX_VALUE)
         {
             throw new UnumException("The pool size cannot be more than "+LONG_COUNTER_MAX_VALUE);
         }
+
         if(startPoint>0 && startPoint+poolsize<=LONG_COUNTER_MAX_VALUE)
         {
             this.counter=startPoint;

@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9777934b-505c-4773-9d9e-01809155be7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueLongNumberGeneratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueLongNumberGeneratorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueLongNumberGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueLongNumberGeneratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,20 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="50" column="18" lean-forward="true" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Readme.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="6" selection-start-column="6" selection-end-column="6" />
+            <state relative-caret-position="441">
+              <caret line="77" column="41" lean-forward="true" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -68,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+            <state relative-caret-position="371">
+              <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,8 +74,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueLongNumberGeneratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2280">
-              <caret line="152" column="42" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
+            <state relative-caret-position="-1587">
+              <caret line="28" column="96" selection-start-line="28" selection-start-column="96" selection-end-line="28" selection-end-column="96" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="127" column="66" selection-start-line="127" selection-start-column="66" selection-end-line="127" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,13 +96,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/LongNumberFetchingProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="106">
+              <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -113,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueLongNumberGeneratorImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="-45">
+              <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -165,18 +168,18 @@
         <option value="$PROJECT_DIR$/src/test/java/com/unum/UniqueNumberGeneratorTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueNumberGeneratorTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/unum/UnumTestSuite.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueLongNumberGeneratorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unum/CachedUniqueLongNumberGenerator.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/unum/LongNumberFetchingProcess.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unum/exception/UnumException.java" />
         <option value="$PROJECT_DIR$/Readme.md" />
-        <option value="$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unum/UniqueNumberGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unum/UniqueLongNumberGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueLongNumberGeneratorImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueLongNumberGeneratorTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java" />
       </list>
     </option>
   </component>
@@ -329,23 +332,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UniqueLongNumberGeneratorTest.getNextLongTestWithException">
-    <configuration name="CachedUniqueNumberGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="unum" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.unum.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.unum" />
-      <option name="MAIN_CLASS_NAME" value="com.unum.CachedUniqueNumberGeneratorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UniqueLongNumberGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UniqueLongNumberGeneratorTest.getNextLongTestWithAllParamsThanLimit">
+    <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithAllParamsThanLimit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="unum" />
       <extension name="coverage">
         <pattern>
@@ -355,28 +343,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.unum" />
       <option name="MAIN_CLASS_NAME" value="com.unum.UniqueLongNumberGeneratorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UniqueLongNumberGeneratorTest.getNextLongTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="unum" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.unum.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.unum" />
-      <option name="MAIN_CLASS_NAME" value="com.unum.UniqueLongNumberGeneratorTest" />
-      <option name="METHOD_NAME" value="getNextLongTest" />
+      <option name="METHOD_NAME" value="getNextLongTestWithAllParamsThanLimit" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithIdentifierAndStartPointMoreThanLimit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="unum" />
       <extension name="coverage">
         <pattern>
@@ -386,7 +359,55 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.unum" />
       <option name="MAIN_CLASS_NAME" value="com.unum.UniqueLongNumberGeneratorTest" />
-      <option name="METHOD_NAME" value="getNextLongTestWithException" />
+      <option name="METHOD_NAME" value="getNextLongTestWithIdentifierAndStartPointMoreThanLimit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithInstanceMoreThanLimit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unum" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unum.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.unum" />
+      <option name="MAIN_CLASS_NAME" value="com.unum.UniqueLongNumberGeneratorTest" />
+      <option name="METHOD_NAME" value="getNextLongTestWithInstanceMoreThanLimit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithPoolAndStartPointMoreThanLimit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unum" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unum.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.unum" />
+      <option name="MAIN_CLASS_NAME" value="com.unum.UniqueLongNumberGeneratorTest" />
+      <option name="METHOD_NAME" value="getNextLongTestWithPoolAndStartPointMoreThanLimit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithPoolThanLimit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unum" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unum.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.unum" />
+      <option name="MAIN_CLASS_NAME" value="com.unum.UniqueLongNumberGeneratorTest" />
+      <option name="METHOD_NAME" value="getNextLongTestWithPoolThanLimit" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -408,28 +429,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UnumTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="unum" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.unum.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.unum" />
-      <option name="MAIN_CLASS_NAME" value="com.unum.UnumTestSuite" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.getNextLongTestWithException" />
-        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest" />
-        <item itemvalue="JUnit.UnumTestSuite" />
-        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.getNextLongTest" />
-        <item itemvalue="JUnit.CachedUniqueNumberGeneratorTest" />
+        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.getNextLongTestWithAllParamsThanLimit" />
+        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.getNextLongTestWithInstanceMoreThanLimit" />
+        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.getNextLongTestWithPoolAndStartPointMoreThanLimit" />
+        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.getNextLongTestWithPoolThanLimit" />
+        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.getNextLongTestWithIdentifierAndStartPointMoreThanLimit" />
       </list>
     </recent_temporary>
   </component>
@@ -447,12 +453,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTest - 2021.10.21 at 13h 46m 48s.xml">
-      <configuration name="UniqueLongNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTest - 2021.10.21 at 13h 47m 53s.xml">
-      <configuration name="UniqueLongNumberGeneratorTest.getNextLongTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UnumTestSuite - 2021.10.21 at 14h 05m 23s.xml">
       <configuration name="UnumTestSuite" configurationId="JUnit" />
     </history-entry>
@@ -476,6 +476,12 @@
     </history-entry>
     <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTestWithException - 2021.10.23 at 06h 30m 24s.xml">
       <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithException" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTestWithIdentifierMoreThanLimit - 2021.10.24 at 08h 10m 29s.xml">
+      <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithIdentifierMoreThanLimit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTestWithIdentifierAndStartPointMoreThanLimit - 2021.10.24 at 08h 11m 07s.xml">
+      <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithIdentifierAndStartPointMoreThanLimit" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -505,7 +511,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.32967034" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.32967034" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -546,13 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/LongNumberFetchingProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar!/org/junit/jupiter/api/Test.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -587,16 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/UniqueNumberGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -611,26 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueLongNumberGeneratorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2280">
-          <caret line="152" column="42" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="445">
@@ -641,20 +610,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueLongNumberGeneratorImpl.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="441">
+          <caret line="77" column="41" lean-forward="true" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/LongNumberFetchingProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueLongNumberGeneratorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="50" column="18" lean-forward="true" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        <state relative-caret-position="-45">
+          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueLongNumberGeneratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1587">
+          <caret line="28" column="96" selection-start-line="28" selection-start-column="96" selection-end-line="28" selection-end-column="96" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="127" column="66" selection-start-line="127" selection-start-column="66" selection-end-line="127" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

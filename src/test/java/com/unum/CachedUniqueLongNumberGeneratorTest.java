@@ -11,7 +11,7 @@ class CachedUniqueLongNumberGeneratorTest {
     private Logger log=Logger.getLogger("CachedUniqueNumberGeneratorTest");
 
 
-    private UniqueLongNumberGenerator getGenerator(int identifier,int instance,int startpoint,int pool)
+    private UniqueLongNumberGenerator getGenerator(int identifier,int instance,long startpoint,long pool)
     {
         UniqueLongNumberGenerator generator=null;
         try
@@ -26,7 +26,7 @@ class CachedUniqueLongNumberGeneratorTest {
         return generator;
     }
 
-    private UniqueLongNumberGenerator getGeneratorWithCacheSize(int identifier,int instance,int startpoint,int pool,int cacheSize)
+    private UniqueLongNumberGenerator getGeneratorWithCacheSize(int identifier,int instance,long startpoint,long pool,int cacheSize)
     {
         UniqueLongNumberGenerator generator=null;
         try

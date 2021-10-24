@@ -20,7 +20,7 @@ class UniqueLongNumberGeneratorTest {
     private Logger log=Logger.getLogger("UniqueNumberGeneratorTest");
 
 
-    private UniqueLongNumberGenerator getGenerator(int identifier,int instance,long startPoint,int pool) throws Exception {
+    private UniqueLongNumberGenerator getGenerator(int identifier,int instance,long startPoint,long pool) throws Exception {
         return new UniqueLongNumberGeneratorImpl(identifier,instance,startPoint,pool);
     }
 
@@ -92,10 +92,70 @@ class UniqueLongNumberGeneratorTest {
 
 
     @Test
-     void getNextLongTestWithException(){
+     void getNextLongTestWithHigherStartPoint(){
 
         Assertions.assertThrows(UnumException.class,()->{
             UniqueLongNumberGenerator generator=getGenerator(1001,1,UniqueLongNumberGenerator.LONG_COUNTER_MAX_VALUE+1,1000);
+        });
+
+
+    }
+
+    @Test
+    void getNextLongTestWithIdentifierMoreThanLimit(){
+
+        Assertions.assertThrows(UnumException.class,()->{
+            UniqueLongNumberGenerator generator=getGenerator(35001,1,UniqueLongNumberGenerator.LONG_COUNTER_MAX_VALUE,1000);
+        });
+
+
+    }
+
+    @Test
+    void getNextLongTestWithIdentifierAndStartPointMoreThanLimit(){
+
+        Assertions.assertThrows(UnumException.class,()->{
+            UniqueLongNumberGenerator generator=getGenerator(35001,1,UniqueLongNumberGenerator.LONG_COUNTER_MAX_VALUE+1,1000);
+        });
+
+
+    }
+
+    @Test
+    void getNextLongTestWithPoolThanLimit(){
+
+        Assertions.assertThrows(UnumException.class,()->{
+            UniqueLongNumberGenerator generator=getGenerator(20000,1,1000,UniqueLongNumberGenerator.LONG_COUNTER_MAX_VALUE+1);
+        });
+
+
+    }
+
+    @Test
+    void getNextLongTestWithPoolAndStartPointMoreThanLimit(){
+
+        Assertions.assertThrows(UnumException.class,()->{
+            UniqueLongNumberGenerator generator=getGenerator(20000,1,UniqueLongNumberGenerator.LONG_COUNTER_MAX_VALUE,1);
+        });
+
+
+    }
+
+    @Test
+    void getNextLongTestWithInstanceMoreThanLimit(){
+
+        Assertions.assertThrows(UnumException.class,()->{
+            UniqueLongNumberGenerator generator=getGenerator(20000,300,1000,1);
+        });
+
+
+    }
+
+    @Test
+    void getNextLongTestWithAllParamsThanLimit(){
+
+        Assertions.assertThrows(UnumException.class,()->{
+            UniqueLongNumberGenerator generator=getGenerator(35001,300,UniqueLongNumberGenerator.LONG_COUNTER_MAX_VALUE+1,UniqueLongNumberGenerator.LONG_COUNTER_MAX_VALUE+1);
         });
 
 
