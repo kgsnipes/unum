@@ -6,3 +6,23 @@ This is not a new concept but this library helps in keeping you focused on the b
 
 Typically applications powered by RDBMS can leverage the benefit as instant scalability might not be available for these setups when the load to the system spikes.
 
+# Getting Started
+
+add dependency to your project.
+
+
+`
+<dependency>
+    <groupId>io.github.kgsnipes</groupId>
+    <artifactId>unum</artifactId>
+    <version>1.01</version>
+</dependency>
+`
+
+
+Create a Number generator and start generating!
+
+
+  `UniqueLongNumberGenerator generator=new UniqueLongNumberGeneratorImpl(1001,1,-1,1000);`
+
+feel free to reach out with your feedbacks.
