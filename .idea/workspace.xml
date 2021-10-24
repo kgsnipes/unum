@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9777934b-505c-4773-9d9e-01809155be7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueLongNumberGeneratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueLongNumberGeneratorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueLongNumberGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueLongNumberGeneratorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="77" column="41" lean-forward="true" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+            <state relative-caret-position="222">
+              <caret line="15" column="335" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="335" />
             </state>
           </provider>
         </entry>
@@ -63,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="371">
-              <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,14 +80,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="127" column="66" selection-start-line="127" selection-start-column="66" selection-end-line="127" selection-end-column="66" />
+            <state relative-caret-position="495">
+              <caret line="161" column="5" lean-forward="true" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Readme.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="164" selection-start-line="6" selection-start-column="164" selection-end-line="6" selection-end-column="164" />
             </state>
           </provider>
         </entry>
@@ -100,15 +106,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="106">
               <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/CachedUniqueLongNumberGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -171,7 +168,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/unum/CachedUniqueLongNumberGenerator.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/unum/LongNumberFetchingProcess.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unum/exception/UnumException.java" />
-        <option value="$PROJECT_DIR$/Readme.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/unum/UniqueNumberGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unum/UniqueLongNumberGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java" />
@@ -180,6 +176,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/unum/impl/CachedUniqueLongNumberGeneratorImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/unum/CachedUniqueLongNumberGeneratorTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java" />
+        <option value="$PROJECT_DIR$/Readme.md" />
       </list>
     </option>
   </component>
@@ -453,18 +450,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UnumTestSuite - 2021.10.21 at 14h 05m 23s.xml">
-      <configuration name="UnumTestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UnumTestSuite - 2021.10.21 at 14h 06m 10s.xml">
-      <configuration name="UnumTestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UnumTestSuite - 2021.10.21 at 14h 09m 00s.xml">
-      <configuration name="UnumTestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UnumTestSuite - 2021.10.21 at 14h 09m 50s.xml">
-      <configuration name="UnumTestSuite" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UniqueLongNumberGeneratorTest - 2021.10.22 at 16h 43m 49s.xml">
       <configuration name="UniqueLongNumberGeneratorTest" configurationId="JUnit" />
     </history-entry>
@@ -483,12 +468,24 @@
     <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTestWithIdentifierAndStartPointMoreThanLimit - 2021.10.24 at 08h 11m 07s.xml">
       <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithIdentifierAndStartPointMoreThanLimit" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTestWithPoolThanLimit - 2021.10.24 at 08h 16m 28s.xml">
+      <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithPoolThanLimit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTestWithPoolAndStartPointMoreThanLimit - 2021.10.24 at 08h 17m 10s.xml">
+      <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithPoolAndStartPointMoreThanLimit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTestWithInstanceMoreThanLimit - 2021.10.24 at 08h 17m 45s.xml">
+      <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithInstanceMoreThanLimit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTestWithAllParamsThanLimit - 2021.10.24 at 08h 18m 25s.xml">
+      <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithAllParamsThanLimit" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="1441" y="-155" width="1862" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25824177" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25824177" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -497,7 +494,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32288402" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32288402" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39916405" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -511,7 +508,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.32967034" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.32967034" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -572,13 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/CachedUniqueLongNumberGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -610,13 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="77" column="41" lean-forward="true" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/LongNumberFetchingProcess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -627,7 +610,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
-          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -656,11 +639,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="127" column="66" selection-start-line="127" selection-start-column="66" selection-end-line="127" selection-end-column="66" />
+        <state relative-caret-position="495">
+          <caret line="161" column="5" lean-forward="true" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="15" column="335" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="335" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="164" selection-start-line="6" selection-start-column="164" selection-end-line="6" selection-end-column="164" />
         </state>
       </provider>
     </entry>
