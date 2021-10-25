@@ -18,6 +18,8 @@ public interface UniqueLongNumberGenerator {
 
     long getNext() throws UnumException;
 
+    void resumeFrom(long number) throws UnumException;
+
     /**
      * this helps print numbers in binary representation
      * @param value

@@ -70,9 +70,9 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
     }
 
     public int getNext() throws UnumException {
+        lock.lock();
         try
         {
-            lock.lock();
             return generate();
         } catch (Exception e) {
             throw new UnumException(e.getMessage(),e);

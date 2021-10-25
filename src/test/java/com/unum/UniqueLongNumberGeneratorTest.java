@@ -160,5 +160,19 @@ class UniqueLongNumberGeneratorTest {
 
 
     }
+
+    @Test
+    void resumeFromTest() throws Exception {
+        UniqueLongNumberGenerator generator=getGenerator(1001,1,10,10000);
+        generator.getNext();
+        generator.getNext();
+        long number=generator.getNext();
+        generator.getNext();
+        generator.getNext();
+        generator.resumeFrom(number);
+        long testNumber=generator.getNext();
+        Assertions.assertEquals(testNumber,number,"Values dont match");
+
+    }
 }
 
