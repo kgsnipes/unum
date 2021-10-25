@@ -26,3 +26,7 @@ Create a Number generator and start generating!
   `UniqueLongNumberGenerator generator=new UniqueLongNumberGeneratorImpl(1001,1,-1,1000);`
 
 feel free to reach out with your feedbacks.
+
+
+Code quality information can be found here
+https://sonarcloud.io/project/overview?id=unum
