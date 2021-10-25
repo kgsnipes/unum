@@ -97,4 +97,20 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
             }
         }
     }
+
+    @Override
+    public void resumeFrom(long number) throws UnumException {
+
+        lock.lock();
+        try
+        {
+            this.queue.clear();
+            super.resumeLogic(number);
+            fillQueue(this.cacheSize);
+        } catch (Exception e) {
+            throw new UnumException(e.getMessage(),e);
+        } finally {
+            lock.unlock();
+        }
+    }
 }
