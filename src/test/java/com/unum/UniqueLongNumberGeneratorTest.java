@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import java.util.logging.Logger;
+import java.util.stream.IntStream;
 
 
 class UniqueLongNumberGeneratorTest {
@@ -179,19 +180,54 @@ class UniqueLongNumberGeneratorTest {
     void resumeFromExceptionForIncorrectIdentifierTest() throws Exception {
 
         Assertions.assertThrows(UnumException.class,()->{
-
-
         UniqueLongNumberGenerator generator=getGenerator(1001,1,10,10000);
         UniqueLongNumberGenerator generator2=getGenerator(1002,1,10,10000);
-        generator.getNext();
-        generator.getNext();
+        generator.resumeFrom(generator2.getNext());
+        });
+
+    }
+
+    @Test
+    void resumeFromExceptionForIncorrectInstanceTest() throws Exception {
+
+        Assertions.assertThrows(UnumException.class,()->{
+            UniqueLongNumberGenerator generator=getGenerator(1001,1,10,10000);
+            UniqueLongNumberGenerator generator2=getGenerator(1001,2,10,10000);
+            generator.resumeFrom(generator2.getNext());
+        });
+
+    }
+
+    @Test
+    void resumeFromExceptionForCrossingPoolsizeTest() throws Exception {
+
+        Assertions.assertThrows(UnumException.class,()->{
+            UniqueLongNumberGenerator generator=getGenerator(1001,1,1,3);
+            generator.getNext();
+            generator.getNext();
+            long number=generator.getNext();
+            generator.resumeFrom(number);
+        });
+
+    }
+
+    @Test
+    void resumeFromTestWithBulkOperation() throws Exception {
+        UniqueLongNumberGenerator generator=getGenerator(1001,1,10,10000);
+        for(int i=0;i<2000;i++)
+        {
+            generator.getNext();
+        }
         long number=generator.getNext();
         long nextNumber=generator.getNext();
-        generator.getNext();
-        generator.resumeFrom(generator2.getNext());
+
+        for(int i=0;i<2000;i++)
+        {
+            generator.getNext();
+        }
+        generator.resumeFrom(number);
         long testNumber=generator.getNext();
         Assertions.assertEquals(testNumber,nextNumber,"Values dont match");
-        });
 
     }
 }

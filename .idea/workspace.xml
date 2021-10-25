@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9777934b-505c-4773-9d9e-01809155be7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -48,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+            <state relative-caret-position="817">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
+            <state relative-caret-position="422">
+              <caret line="99" column="93" selection-start-line="99" selection-start-column="93" selection-end-line="99" selection-end-column="93" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="195" column="5" lean-forward="true" selection-start-line="195" selection-start-column="5" selection-end-line="195" selection-end-column="5" />
+            <state relative-caret-position="478">
+              <caret line="228" column="44" selection-start-line="228" selection-start-column="44" selection-end-line="228" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -330,8 +329,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UniqueLongNumberGeneratorTest.resumeFromExceptionForIncorrectIdentifierTest">
-    <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithAllParamsThanLimit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UniqueLongNumberGeneratorTest.resumeFromTestWithBulkOperation">
+    <configuration name="UniqueLongNumberGeneratorTest.resumeFromExceptionForCrossingPoolsizeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="unum" />
       <extension name="coverage">
         <pattern>
@@ -341,39 +340,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.unum" />
       <option name="MAIN_CLASS_NAME" value="com.unum.UniqueLongNumberGeneratorTest" />
-      <option name="METHOD_NAME" value="getNextLongTestWithAllParamsThanLimit" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithInstanceMoreThanLimit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="unum" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.unum.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.unum" />
-      <option name="MAIN_CLASS_NAME" value="com.unum.UniqueLongNumberGeneratorTest" />
-      <option name="METHOD_NAME" value="getNextLongTestWithInstanceMoreThanLimit" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithPoolAndStartPointMoreThanLimit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="unum" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.unum.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.unum" />
-      <option name="MAIN_CLASS_NAME" value="com.unum.UniqueLongNumberGeneratorTest" />
-      <option name="METHOD_NAME" value="getNextLongTestWithPoolAndStartPointMoreThanLimit" />
+      <option name="METHOD_NAME" value="resumeFromExceptionForCrossingPoolsizeTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -395,6 +362,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UniqueLongNumberGeneratorTest.resumeFromExceptionForIncorrectInstanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unum" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unum.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.unum" />
+      <option name="MAIN_CLASS_NAME" value="com.unum.UniqueLongNumberGeneratorTest" />
+      <option name="METHOD_NAME" value="resumeFromExceptionForIncorrectInstanceTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UniqueLongNumberGeneratorTest.resumeFromTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="unum" />
       <extension name="coverage">
@@ -406,6 +389,22 @@
       <option name="PACKAGE_NAME" value="com.unum" />
       <option name="MAIN_CLASS_NAME" value="com.unum.UniqueLongNumberGeneratorTest" />
       <option name="METHOD_NAME" value="resumeFromTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UniqueLongNumberGeneratorTest.resumeFromTestWithBulkOperation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unum" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unum.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.unum" />
+      <option name="MAIN_CLASS_NAME" value="com.unum.UniqueLongNumberGeneratorTest" />
+      <option name="METHOD_NAME" value="resumeFromTestWithBulkOperation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -429,11 +428,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.resumeFromTestWithBulkOperation" />
+        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.resumeFromExceptionForCrossingPoolsizeTest" />
+        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.resumeFromExceptionForIncorrectInstanceTest" />
         <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.resumeFromExceptionForIncorrectIdentifierTest" />
         <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.resumeFromTest" />
-        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.getNextLongTestWithAllParamsThanLimit" />
-        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.getNextLongTestWithInstanceMoreThanLimit" />
-        <item itemvalue="JUnit.UniqueLongNumberGeneratorTest.getNextLongTestWithPoolAndStartPointMoreThanLimit" />
       </list>
     </recent_temporary>
   </component>
@@ -451,21 +450,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTestWithPoolThanLimit - 2021.10.24 at 08h 16m 28s.xml">
-      <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithPoolThanLimit" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTestWithPoolAndStartPointMoreThanLimit - 2021.10.24 at 08h 17m 10s.xml">
-      <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithPoolAndStartPointMoreThanLimit" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTestWithInstanceMoreThanLimit - 2021.10.24 at 08h 17m 45s.xml">
-      <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithInstanceMoreThanLimit" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueLongNumberGeneratorTest_getNextLongTestWithAllParamsThanLimit - 2021.10.24 at 08h 18m 25s.xml">
-      <configuration name="UniqueLongNumberGeneratorTest.getNextLongTestWithAllParamsThanLimit" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UniqueLongNumberGeneratorTest_resumeFromTest - 2021.10.25 at 15h 07m 10s.xml">
-      <configuration name="UniqueLongNumberGeneratorTest.resumeFromTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UniqueLongNumberGeneratorTest_resumeFromTest - 2021.10.25 at 15h 09m 40s.xml">
       <configuration name="UniqueLongNumberGeneratorTest.resumeFromTest" configurationId="JUnit" />
     </history-entry>
@@ -480,6 +464,21 @@
     </history-entry>
     <history-entry file="UniqueLongNumberGeneratorTest_resumeFromExceptionForIncorrectIdentifierTest - 2021.10.25 at 16h 03m 00s.xml">
       <configuration name="UniqueLongNumberGeneratorTest.resumeFromExceptionForIncorrectIdentifierTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueLongNumberGeneratorTest_resumeFromExceptionForIncorrectInstanceTest - 2021.10.25 at 16h 22m 36s.xml">
+      <configuration name="UniqueLongNumberGeneratorTest.resumeFromExceptionForIncorrectInstanceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueLongNumberGeneratorTest_resumeFromExceptionForCrossingPoolsizeTest - 2021.10.25 at 16h 24m 25s.xml">
+      <configuration name="UniqueLongNumberGeneratorTest.resumeFromExceptionForCrossingPoolsizeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueLongNumberGeneratorTest_resumeFromExceptionForCrossingPoolsizeTest - 2021.10.25 at 16h 24m 45s.xml">
+      <configuration name="UniqueLongNumberGeneratorTest.resumeFromExceptionForCrossingPoolsizeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueLongNumberGeneratorTest_resumeFromExceptionForCrossingPoolsizeTest - 2021.10.25 at 16h 26m 04s.xml">
+      <configuration name="UniqueLongNumberGeneratorTest.resumeFromExceptionForCrossingPoolsizeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UniqueLongNumberGeneratorTest_resumeFromExceptionForCrossingPoolsizeTest - 2021.10.25 at 16h 26m 18s.xml">
+      <configuration name="UniqueLongNumberGeneratorTest.resumeFromExceptionForCrossingPoolsizeTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -634,8 +633,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+        <state relative-caret-position="817">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -644,8 +643,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueLongNumberGeneratorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
+        <state relative-caret-position="422">
+          <caret line="99" column="93" selection-start-line="99" selection-start-column="93" selection-end-line="99" selection-end-column="93" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -654,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueLongNumberGeneratorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="195" column="5" lean-forward="true" selection-start-line="195" selection-start-column="5" selection-end-line="195" selection-end-column="5" />
+        <state relative-caret-position="478">
+          <caret line="228" column="44" selection-start-line="228" selection-start-column="44" selection-end-line="228" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
