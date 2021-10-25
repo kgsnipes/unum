@@ -85,33 +85,38 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
         lock.lock();
         try
         {
-            int identifier= (int) (number>>48);
-            long tinstance=number<<16;
-            tinstance=tinstance>>56;
-            int instance= (int) tinstance;
-            long tempCounter=number;
-            //System.out.println(displayInBinary(tempCounter));
-            tempCounter=tempCounter<<24;
-            //System.out.println(displayInBinary(tempCounter));
-            tempCounter=tempCounter>>24;
-            // System.out.println(displayInBinary(tempCounter));
-            //this.counter=tempCounter;
-
-            if(identifier==this.generatorIdentifier && instance==this.instance && tempCounter<this.upperLimit)
-            {
-                this.counter=tempCounter;
-                this.counter++;
-            }
-            else
-            {
-                throw new UnumException("The identifier/instance/poolsize is not matching");
-            }
+           resumeLogic(number);
 
 
         } catch (Exception e) {
             throw new UnumException(e.getMessage(),e);
         } finally {
             lock.unlock();
+        }
+    }
+
+    protected void resumeLogic(long number)throws UnumException
+    {
+        int identifier= (int) (number>>48);
+        long tinstance=number<<16;
+        tinstance=tinstance>>56;
+        int instance= (int) tinstance;
+        long tempCounter=number;
+        //System.out.println(displayInBinary(tempCounter));
+        tempCounter=tempCounter<<24;
+        //System.out.println(displayInBinary(tempCounter));
+        tempCounter=tempCounter>>24;
+        // System.out.println(displayInBinary(tempCounter));
+        //this.counter=tempCounter;
+
+        if(identifier==this.generatorIdentifier && instance==this.instance && tempCounter<this.upperLimit)
+        {
+            this.counter=tempCounter;
+            this.counter++;
+        }
+        else
+        {
+            throw new UnumException("The identifier/instance/poolsize is not matching");
         }
     }
 
