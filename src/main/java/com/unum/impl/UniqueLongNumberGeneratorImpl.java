@@ -100,6 +100,7 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
             if(identifier==this.generatorIdentifier && instance==this.instance && tempCounter<this.upperLimit)
             {
                 this.counter=tempCounter;
+                this.counter++;
             }
             else
             {
