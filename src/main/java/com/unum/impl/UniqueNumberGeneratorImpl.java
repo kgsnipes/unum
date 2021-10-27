@@ -100,7 +100,7 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
 
     protected void resumeLogic(int number)throws UnumException
     {
-        int identifier= (int) (number>>24);
+        int identifier= number>>24;
         int tinstance=number<<8;
         tinstance=tinstance>>24;
         int tempCounter=number;
