@@ -100,16 +100,12 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
         int identifier= (int) (number>>48);
         long tinstance=number<<16;
         tinstance=tinstance>>56;
-        int instance= (int) tinstance;
+        int ins= (int) tinstance;
         long tempCounter=number;
-        //System.out.println(displayInBinary(tempCounter));
         tempCounter=tempCounter<<24;
-        //System.out.println(displayInBinary(tempCounter));
         tempCounter=tempCounter>>24;
-        // System.out.println(displayInBinary(tempCounter));
-        //this.counter=tempCounter;
 
-        if(identifier==this.generatorIdentifier && instance==this.instance && tempCounter<this.upperLimit)
+        if(identifier==this.generatorIdentifier && ins==this.instance && tempCounter<this.upperLimit)
         {
             this.counter=tempCounter;
             this.counter++;

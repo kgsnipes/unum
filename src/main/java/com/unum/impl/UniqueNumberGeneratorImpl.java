@@ -103,16 +103,11 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         int identifier= (int) (number>>24);
         int tinstance=number<<8;
         tinstance=tinstance>>24;
-        int instance= (int) tinstance;
         int tempCounter=number;
-        //System.out.println(displayInBinary(tempCounter));
         tempCounter=tempCounter<<16;
-        //System.out.println(displayInBinary(tempCounter));
         tempCounter=tempCounter>>16;
-        // System.out.println(displayInBinary(tempCounter));
-        //this.counter=tempCounter;
 
-        if(identifier==this.generatorIdentifier && instance==this.instance && tempCounter<this.upperLimit)
+        if(identifier==this.generatorIdentifier && tinstance==this.instance && tempCounter<this.upperLimit)
         {
             this.counter=tempCounter;
             this.counter++;
