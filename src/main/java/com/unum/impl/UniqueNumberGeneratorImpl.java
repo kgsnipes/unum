@@ -17,6 +17,20 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
 
     public UniqueNumberGeneratorImpl(int generatorIdentifier, int instance,int startPoint, int poolsize) throws UnumException {
 
+        this.validateArguments(generatorIdentifier,instance,startPoint,poolsize);
+    }
+
+    public UniqueNumberGeneratorImpl(int resumePoint,int poolsize)  throws UnumException {
+
+        int identifier=this.extractIdentifier(resumePoint);
+        int inst=this.extractInstance(resumePoint);
+        int count=this.extractCounter(resumePoint);
+        this.validateArguments(identifier,inst,count+1,poolsize);
+        
+    }
+
+    protected void validateArguments(int generatorIdentifier, int instance,int startPoint, int poolsize) throws UnumException
+    {
         if(generatorIdentifier<1 || generatorIdentifier>MAX_IDENTIFIER_VALUE)
         {
             throw new UnumException("Identifier can be between 1 and "+MAX_IDENTIFIER_VALUE);
@@ -25,8 +39,6 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         {
             throw new UnumException("Instance number can range from 0 to "+INSTANCE_MAX_VALUE);
         }
-        this.generatorIdentifier=generatorIdentifier;
-        this.instance = instance;
 
         if(startPoint>0 && startPoint+poolsize<=COUNTER_MAX_VALUE)
         {
@@ -42,6 +54,9 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         {
             throw new UnumException("The pool size cannot be more than "+COUNTER_MAX_VALUE);
         }
+
+        this.generatorIdentifier=generatorIdentifier;
+        this.instance = instance;
         this.upperLimit=poolsize==-1?COUNTER_MAX_VALUE:poolsize;
     }
 
@@ -116,5 +131,25 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         {
             throw new UnumException("The identifier/instance/poolsize is not matching");
         }
+    }
+
+    protected int extractIdentifier(int number)
+    {
+        return number>>24;
+    }
+
+    protected int extractInstance(int number)
+    {
+        int tinstance=number<<8;
+        tinstance=tinstance>>24;
+        return tinstance;
+    }
+
+    protected int extractCounter(int number)
+    {
+        int tempCounter=number;
+        tempCounter=tempCounter<<16;
+        tempCounter=tempCounter>>16;
+        return tempCounter;
     }
 }
