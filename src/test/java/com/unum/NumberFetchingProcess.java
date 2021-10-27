@@ -3,22 +3,22 @@ package com.unum;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-import java.util.stream.LongStream;
+import java.util.stream.IntStream;
 
-class LongNumberFetchingProcess extends Thread{
+class NumberFetchingProcess extends Thread{
 
-    private Logger log=Logger.getLogger("LongNumberFetchingProcess");
-    private long poolSize;
-    private UniqueLongNumberGenerator generator;
-    private List<Long> acquiredNumbers=new ArrayList<>();
+    private Logger log=Logger.getLogger("NumberFetchingProcess");
+    private int poolSize;
+    private UniqueNumberGenerator generator;
+    private List<Integer> acquiredNumbers=new ArrayList<>();
 
-    public LongNumberFetchingProcess(long poolSize, UniqueLongNumberGenerator generator) {
+    public NumberFetchingProcess(int poolSize, UniqueNumberGenerator generator) {
         this.poolSize = poolSize;
         this.generator = generator;
     }
 
 
-    public List<Long> getAcquiredNumbers() {
+    public List<Integer> getAcquiredNumbers() {
         return acquiredNumbers;
     }
 
@@ -26,8 +26,8 @@ class LongNumberFetchingProcess extends Thread{
     public void run() {
         try
         {
-            LongStream.range(0,this.poolSize).forEach((e)->{
-                long num= 0;
+            IntStream.range(0,this.poolSize).forEach((e)->{
+                int num= 0;
                 try {
                     num = this.generator.getNext();
                 } catch (Exception ex) {

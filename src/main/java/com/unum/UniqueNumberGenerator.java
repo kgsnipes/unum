@@ -16,6 +16,7 @@ public interface UniqueNumberGenerator {
     int INSTANCE_MAX_VALUE=255;//upper limit 128 - 8 bits
 
     int getNext() throws UnumException;
+    void resumeFrom(int number) throws UnumException;
 
     /**
      * this helps print numbers in binary representation
