@@ -6,8 +6,8 @@ import com.unum.exception.UnumException;
  * @author kaushik.ganguly
  * The UniqueLongNumberGenerator interface defines methods and constraints that are applicable for using this generator.
  *  There can be a max of 128 instances for a given identifier.
- *  There can be a max of 35000 as the generator identifier.
- *  There can be a max of 1099511627775 numbers that can be generated from the generator.
+ *  There can be a max of 35000 or 35k as the generator identifier.
+ *  There can be a max of 1099511627775 or 1.9 trillion numbers that can be generated from the generator.
  */
 public interface UniqueLongNumberGenerator {
 

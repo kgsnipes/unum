@@ -15,6 +15,17 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
     private ReentrantLock lock=new ReentrantLock();
 
     public UniqueLongNumberGeneratorImpl(int generatorIdentifier,int instance,long startPoint,long poolsize) throws UnumException {
+        this.validateArguments(generatorIdentifier,instance,startPoint,poolsize);
+    }
+
+    public UniqueLongNumberGeneratorImpl(long resumePoint,long poolsize) throws UnumException {
+        int identifier=this.extractIdentifier(resumePoint);
+        int inst=this.extractInstance(resumePoint);
+        long count=this.extractCounter(resumePoint);
+        this.validateArguments(generatorIdentifier,instance,count,poolsize);
+    }
+
+    protected void validateArguments(int generatorIdentifier,int instance,long startPoint,long poolsize) throws UnumException {
         if(generatorIdentifier<1 || generatorIdentifier>LONG_MAX_IDENTIFIER_VALUE)
         {
             throw new UnumException("Identifier can be between 1 and "+LONG_MAX_IDENTIFIER_VALUE);
@@ -97,13 +108,9 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
 
     protected void resumeLogic(long number)throws UnumException
     {
-        int identifier= (int) (number>>48);
-        long tinstance=number<<16;
-        tinstance=tinstance>>56;
-        int ins= (int) tinstance;
-        long tempCounter=number;
-        tempCounter=tempCounter<<24;
-        tempCounter=tempCounter>>24;
+        int identifier= this.extractIdentifier(number);
+        int ins= this.extractInstance(number);
+        long tempCounter=this.extractCounter(number);
 
         if(identifier==this.generatorIdentifier && ins==this.instance && tempCounter<this.upperLimit)
         {
@@ -114,6 +121,26 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
         {
             throw new UnumException("The identifier/instance/poolsize is not matching");
         }
+    }
+
+    protected int extractIdentifier(long number)
+    {
+        return (int) (number>>48);
+    }
+
+    protected int extractInstance(long number)
+    {
+        long tinstance=number<<16;
+        tinstance=tinstance>>56;
+        return (int) tinstance;
+    }
+
+    protected long extractCounter(long number)
+    {
+        long tempCounter=number;
+        tempCounter=tempCounter<<24;
+        tempCounter=tempCounter>>24;
+        return tempCounter;
     }
 
 }

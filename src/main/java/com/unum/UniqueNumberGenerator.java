@@ -7,7 +7,7 @@ import com.unum.exception.UnumException;
  * The UniqueNumberGenerator interface defines methods and constraints that are applicable for using this generator.
  * There can be a max of 255 instances for a given identifier.
  * There can be a max of 255 as the generator identifier.
- * There can be a max of 65535 numbers that can be generated from the generator.
+ * There can be a max of 65535 or 65k numbers that can be generated from the generator.
  */
 public interface UniqueNumberGenerator {
 
@@ -17,6 +17,8 @@ public interface UniqueNumberGenerator {
 
     int getNext() throws UnumException;
     void resumeFrom(int number) throws UnumException;
+    int getUpperLimit()throws UnumException;
+    int getCapacityAvailable()throws UnumException;
 
     /**
      * this helps print numbers in binary representation

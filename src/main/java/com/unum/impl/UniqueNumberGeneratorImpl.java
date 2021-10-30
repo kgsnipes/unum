@@ -26,7 +26,7 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         int inst=this.extractInstance(resumePoint);
         int count=this.extractCounter(resumePoint);
         this.validateArguments(identifier,inst,count+1,poolsize);
-        
+
     }
 
     protected void validateArguments(int generatorIdentifier, int instance,int startPoint, int poolsize) throws UnumException
@@ -61,7 +61,7 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
     }
 
     protected int generate() throws UnumException {
-        int retVal=generateInt();
+        int retVal=generateInt(this.generatorIdentifier,this.instance,this.counter);
 
         if(this.counter<this.upperLimit)
         {
@@ -74,9 +74,9 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         return retVal;
     }
 
-    private int generateInt()
+    private int generateInt(int identifier,int instance, int counter)
     {
-        int retVal=this.generatorIdentifier;
+        int retVal=identifier;
         retVal=retVal<<8;
         retVal=retVal|instance;
         retVal=retVal<<16;
@@ -113,12 +113,37 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         }
     }
 
+    @Override
+    public int getUpperLimit() throws UnumException {
+        lock.lock();
+        try
+        {
+            return this.generateInt(this.generatorIdentifier,this.instance,this.upperLimit);
+        } catch (Exception e) {
+            throw new UnumException(e.getMessage(),e);
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    @Override
+    public int getCapacityAvailable() throws UnumException {
+        lock.lock();
+        try
+        {
+            return this.upperLimit-this.counter;
+        } catch (Exception e) {
+            throw new UnumException(e.getMessage(),e);
+        } finally {
+            lock.unlock();
+        }
+    }
+
     protected void resumeLogic(int number)throws UnumException
     {
-        int identifier= number>>24;
-        int tinstance=number<<8;
-        tinstance=tinstance>>24;
-        int tempCounter=number;
+        int identifier= this.extractIdentifier(number);
+        int tinstance=this.extractInstance(number);
+        int tempCounter=this.extractCounter(number);
         tempCounter=tempCounter<<16;
         tempCounter=tempCounter>>16;
 
@@ -152,4 +177,5 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         tempCounter=tempCounter>>16;
         return tempCounter;
     }
+
 }

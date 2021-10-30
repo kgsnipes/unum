@@ -18,11 +18,7 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
 
     public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance,long startPoint, long poolsize) throws UnumException {
         super(generatorIdentifier, instance,startPoint, poolsize);
-
-        if (poolsize < this.cacheSize)
-        {
-            this.cacheSize= (int) poolsize;
-        }
+        this.calculateCacheSize(poolsize);
         this.initQueue();
         this.fillQueue(this.cacheSize);
     }
@@ -32,6 +28,21 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
         this.cacheSize=cacheSize;
         this.initQueue();
         this.fillQueue(this.cacheSize);
+    }
+
+    public CachedUniqueLongNumberGeneratorImpl(long resumePoint,long poolsize) throws UnumException {
+        super(resumePoint, poolsize);
+        this.calculateCacheSize(poolsize);
+        this.initQueue();
+        this.fillQueue(this.cacheSize);
+    }
+
+    protected void calculateCacheSize(long poolsize)
+    {
+        if (poolsize < this.cacheSize)
+        {
+            this.cacheSize= (int) poolsize;
+        }
     }
 
     private void initQueue()
