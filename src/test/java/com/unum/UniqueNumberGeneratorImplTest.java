@@ -5,13 +5,22 @@ import com.unum.impl.UniqueNumberGeneratorImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.*;
 import java.util.logging.Logger;
+import java.util.stream.IntStream;
 
 public class UniqueNumberGeneratorImplTest {
     private Logger log=Logger.getLogger("UniqueNumberGeneratorImplTest");
 
     private UniqueNumberGenerator getGenerator(int identifier,int instance,int startPoint,int pool) throws Exception {
         return new UniqueNumberGeneratorImpl(identifier,instance,startPoint,pool);
+    }
+
+    private UniqueNumberGenerator getGenerator(int resume,int pool) throws Exception {
+        return new UniqueNumberGeneratorImpl(resume,pool);
     }
 
     @Test
@@ -216,6 +225,78 @@ public class UniqueNumberGeneratorImplTest {
         generator.resumeFrom(number);
         long testNumber=generator.getNext();
         Assertions.assertEquals(testNumber,nextNumber,"Values dont match");
+
+    }
+
+    @Test
+    void constructorBasedResume()throws Exception{
+
+        UniqueNumberGenerator generator=getGenerator(100,1,10,10000);
+        for(int i=0;i<2000;i++)
+        {
+            generator.getNext();
+        }
+
+        int number=generator.getNext();
+        int nextNumber=generator.getNext();
+
+        UniqueNumberGenerator generator2=getGenerator(number,10000);
+        Assertions.assertEquals(generator2.getNext(),nextNumber,"Values dont match");
+
+    }
+
+    @Test
+    void constructorBasedResumeTest2()throws Exception{
+
+        UniqueNumberGenerator generator=getGenerator(100,1,10,10000);
+        for(int i=0;i<2000;i++)
+        {
+            generator.getNext();
+        }
+
+        int number=generator.getNext();
+
+        UniqueNumberGenerator generator2=getGenerator(number,10000);
+        Assertions.assertNotEquals(generator2.getNext(),number,"Values dont match");
+
+    }
+
+    @Test
+    void numberGenerationCheckWithLotsOfThreads()
+    {
+        int threadCount=20;
+
+        List<NumberFetchingProcess> threads=new ArrayList<>();
+        IntStream.range(0,threadCount).forEach(e->{
+            UniqueNumberGenerator generator= null;
+            int count =e+1;
+            try {
+                generator = new UniqueNumberGeneratorImpl(count,e,0, UniqueNumberGenerator.COUNTER_MAX_VALUE);
+            } catch (UnumException ex) {
+                ex.printStackTrace();
+                Assertions.fail(ex.getMessage());
+            }
+            threads.add(new NumberFetchingProcess(UniqueNumberGenerator.COUNTER_MAX_VALUE,generator));
+        });
+
+        for(NumberFetchingProcess process : threads)
+        {
+            process.start();
+            try {
+                process.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                Assertions.fail(e.getMessage());
+            }
+        }
+
+        for(NumberFetchingProcess process : threads)
+        {
+            if(process.getAcquiredNumbers().size()!=UniqueNumberGenerator.COUNTER_MAX_VALUE)
+            {
+                Assertions.fail("Numbers were not acquired");
+            }
+        }
 
     }
 
