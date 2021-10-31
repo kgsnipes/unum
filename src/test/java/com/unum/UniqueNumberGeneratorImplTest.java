@@ -262,42 +262,50 @@ public class UniqueNumberGeneratorImplTest {
     }
 
     @Test
-    void numberGenerationCheckWithLotsOfThreads()
+    void numberGenerationCheckWithLotsOfThreads()throws Exception
     {
-        int threadCount=20;
+        int threads=100;
+        ExecutorService executorService=Executors.newFixedThreadPool(threads);
+        List<Future<List<Integer>>> futures=new ArrayList<>();
+        UniqueNumberGenerator generator=getGenerator(1,0,0,-1);
+        Callable<List<Integer>> numberConsumingTask=()->{
 
-        List<NumberFetchingProcess> threads=new ArrayList<>();
-        IntStream.range(0,threadCount).forEach(e->{
-            UniqueNumberGenerator generator= null;
-            int count =e+1;
-            try {
-                generator = new UniqueNumberGeneratorImpl(count,e,0, UniqueNumberGenerator.COUNTER_MAX_VALUE);
-            } catch (UnumException ex) {
-                ex.printStackTrace();
-                Assertions.fail(ex.getMessage());
+            List<Integer> numbersFetched=new ArrayList<>();
+            for(int i=0;i<UniqueNumberGenerator.COUNTER_MAX_VALUE/threads;i++) {
+                numbersFetched.add(generator.getNext());
             }
-            threads.add(new NumberFetchingProcess(UniqueNumberGenerator.COUNTER_MAX_VALUE,generator));
-        });
+            log.info("Done");
+            return numbersFetched;
 
-        for(NumberFetchingProcess process : threads)
+        };
+
+        for(int i=0;i<threads;i++)
         {
-            process.start();
-            try {
-                process.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-                Assertions.fail(e.getMessage());
-            }
+
+           // futures.add(numberConsumingTask)
+            futures.add(executorService.submit(numberConsumingTask));
         }
 
-        for(NumberFetchingProcess process : threads)
+        int count=1;
+        if(executorService.awaitTermination(60,TimeUnit.SECONDS))
         {
-            if(process.getAcquiredNumbers().size()!=UniqueNumberGenerator.COUNTER_MAX_VALUE)
+            executorService.shutdown();
+            for(Future<List<Integer>> f :futures)
             {
-                Assertions.fail("Numbers were not acquired");
+                List<Integer> result=f.get();
+                if(f.isDone())
+                {
+                    if(result.size()<UniqueNumberGenerator.COUNTER_MAX_VALUE/threads)
+                    {
+                        Assertions.fail("Was not able to fetch enough numbers "+result.size());
+                    }
+                    count++;
+                }
+
             }
         }
 
+        Assertions.assertEquals(100,count,"All threads did not execute");
     }
 
 }

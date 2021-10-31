@@ -38,7 +38,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
+            <state relative-caret-position="56">
               <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -50,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueNumberGeneratorImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="273" column="106" selection-start-line="273" selection-start-column="106" selection-end-line="273" selection-end-column="106" />
+            <state relative-caret-position="732">
+              <caret line="306" column="70" selection-start-line="306" selection-start-column="70" selection-end-line="306" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,10 +60,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/NumberFetchingProcess.java">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/graalvm-ce-java11-21.1.0/Contents/Home/lib/src.zip!/java.base/java/util/concurrent/ExecutorService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+            <state relative-caret-position="227">
+              <caret line="287" column="24" selection-start-line="287" selection-start-column="24" selection-end-line="287" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -222,10 +222,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="25" />
-    <option name="width" value="1440" />
-    <option name="height" value="875" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1445" />
+    <option name="y" value="-155" />
+    <option name="width" value="1862" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -461,9 +462,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UniqueNumberGeneratorImplTest - 2021.10.27 at 09h 55m 13s.xml">
-      <configuration name="UniqueNumberGeneratorImplTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UniqueNumberGeneratorImplTest - 2021.10.27 at 09h 55m 32s.xml">
       <configuration name="UniqueNumberGeneratorImplTest" configurationId="JUnit" />
     </history-entry>
@@ -491,9 +489,12 @@
     <history-entry file="UniqueNumberGeneratorImplTest_numberGenerationCheckWithLotsOfThreads - 2021.10.30 at 14h 56m 49s.xml">
       <configuration name="UniqueNumberGeneratorImplTest.numberGenerationCheckWithLotsOfThreads" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UniqueNumberGeneratorImplTest_numberGenerationCheckWithLotsOfThreads - 2021.10.31 at 09h 38m 27s.xml">
+      <configuration name="UniqueNumberGeneratorImplTest.numberGenerationCheckWithLotsOfThreads" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1393" height="875" extended-state="6" />
+    <frame x="1445" y="-155" width="1862" height="1055" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.3397711" />
@@ -505,7 +506,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3217503" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26123303" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39916405" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -701,7 +702,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unum/impl/UniqueNumberGeneratorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="56">
           <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -709,10 +710,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/graalvm-ce-java11-21.1.0/Contents/Home/lib/src.zip!/java.base/java/util/concurrent/ExecutorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="287" column="24" selection-start-line="287" selection-start-column="24" selection-end-line="287" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/unum/UniqueNumberGeneratorImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="273" column="106" selection-start-line="273" selection-start-column="106" selection-end-line="273" selection-end-column="106" />
+        <state relative-caret-position="732">
+          <caret line="306" column="70" selection-start-line="306" selection-start-column="70" selection-end-line="306" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
