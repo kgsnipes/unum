@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -306,6 +308,15 @@ public class UniqueNumberGeneratorImplTest {
 
         Assertions.assertEquals(100,count,"All threads did not execute");
         Assertions.assertEquals(35,UniqueNumberGenerator.COUNTER_MAX_VALUE-(numbersToFetch*threads),"The remaining do not match");
+    }
+
+
+    @Test
+    void writeToDb()throws Exception
+    {
+        Connection conn = DriverManager.getConnection("jdbc:h2:~/test");
+        Statement statement=
+        conn.close();
     }
 
 }
