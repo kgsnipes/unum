@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -275,6 +278,58 @@ class UniqueLongNumberGeneratorTest {
 
         Assertions.assertEquals(100,count,"All threads did not execute");
        // Assertions.assertEquals(35,UniqueLongNumberGenerator.LONG_COUNTER_MAX_VALUE-(numbersToFetch*threads),"The remaining do not match");
+    }
+
+    @Test
+    void writingRecordsToDbForPrimaryKeyColumnTest()throws Exception
+    {
+        Connection conn = DriverManager.getConnection("jdbc:h2:./testdb/unum_test_db");
+        dropTestTableinDB(conn);
+        createTestTablesInDb(conn);
+        long recordsToBeInserted=UniqueLongNumberGenerator.LONG_COUNTER_MAX_VALUE;
+        int count=insertNumbersToTable(recordsToBeInserted,conn);
+        conn.close();
+        Assertions.assertEquals(recordsToBeInserted,count,"Records inserted do no match the expectations");
+    }
+
+    void createTestTablesInDb(Connection conn)throws Exception
+    {
+
+        Statement statement=conn.createStatement();
+        statement.executeUpdate("create table longer_numbers(" +
+                "gnum BIGINT,"+
+                "PRIMARY KEY(gnum))");
+        statement.close();
+
+    }
+
+    void dropTestTableinDB(Connection conn)throws Exception
+    {
+        Statement statement=conn.createStatement();
+        statement.executeUpdate("DROP TABLE IF EXISTS longer_numbers");
+
+        statement.close();
+    }
+
+    int insertNumbersToTable(long recordsToBeInserted,Connection conn)throws Exception
+    {
+        int totalRecords=0;
+        UniqueLongNumberGenerator generator=getGenerator(1,0,0,recordsToBeInserted);
+        for(long i=0;i<recordsToBeInserted;i++)
+        {
+            totalRecords+=insertNumberToTable(generator.getNext(),conn);
+        }
+
+        return totalRecords;
+    }
+
+    int insertNumberToTable(long num,Connection conn)throws Exception
+    {
+        Statement statement=conn.createStatement();
+        int rows= statement.executeUpdate("insert into numbers(gnum) values("+num+")");
+        //log.info("record inserted with value - "+num);
+        statement.close();
+        return rows;
     }
 
 }

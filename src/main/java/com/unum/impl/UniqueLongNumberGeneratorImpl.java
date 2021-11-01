@@ -37,7 +37,7 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
         this.generatorIdentifier=generatorIdentifier;
         this.instance = instance;
 
-        if(poolsize>LONG_COUNTER_MAX_VALUE || startPoint+poolsize>=LONG_COUNTER_MAX_VALUE)
+        if(poolsize>LONG_COUNTER_MAX_VALUE || startPoint+poolsize>LONG_COUNTER_MAX_VALUE)
         {
             throw new UnumException("The pool size cannot be more than "+LONG_COUNTER_MAX_VALUE);
         }

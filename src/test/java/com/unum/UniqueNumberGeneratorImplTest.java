@@ -315,52 +315,52 @@ public class UniqueNumberGeneratorImplTest {
     @Test
     void writingRecordsToDbForPrimaryKeyColumnTest()throws Exception
     {
-        dropTestTableinDB();
-        createTestTablesInDb();
-        int recordsToBeInserted=50_000;
-        int count=insertNumbersToTable(recordsToBeInserted);
+        Connection conn = DriverManager.getConnection("jdbc:h2:./testdb/unum_test_db");
+        dropTestTableinDB(conn);
+        createTestTablesInDb(conn);
+        int recordsToBeInserted=UniqueNumberGenerator.COUNTER_MAX_VALUE;
+        int count=insertNumbersToTable(recordsToBeInserted,conn);
+        conn.close();
         Assertions.assertEquals(recordsToBeInserted,count,"Records inserted do no match the expectations");
     }
 
-    void createTestTablesInDb()throws Exception
+    void createTestTablesInDb(Connection conn)throws Exception
     {
-        Connection conn = DriverManager.getConnection("jdbc:h2:./testdb/unum_test_db");
+
         Statement statement=conn.createStatement();
         statement.executeUpdate("create table numbers(" +
                 "gnum BIGINT,"+
                 "PRIMARY KEY(gnum))");
+        statement.close();
 
-        conn.close();
     }
 
-    void dropTestTableinDB()throws Exception
+    void dropTestTableinDB(Connection conn)throws Exception
     {
-        Connection conn = DriverManager.getConnection("jdbc:h2:./testdb/unum_test_db");
         Statement statement=conn.createStatement();
         statement.executeUpdate("DROP TABLE IF EXISTS numbers");
 
-        conn.close();
+        statement.close();
     }
 
-    int insertNumbersToTable(int recordsToBeInserted)throws Exception
+    int insertNumbersToTable(int recordsToBeInserted,Connection conn)throws Exception
     {
         int totalRecords=0;
         UniqueNumberGenerator generator=getGenerator(1,0,0,recordsToBeInserted);
         for(int i=0;i<recordsToBeInserted;i++)
         {
-            totalRecords+=insertNumberToTable(generator.getNext());
+            totalRecords+=insertNumberToTable(generator.getNext(),conn);
         }
 
         return totalRecords;
     }
 
-    int insertNumberToTable(int num)throws Exception
+    int insertNumberToTable(int num,Connection conn)throws Exception
     {
-        Connection conn = DriverManager.getConnection("jdbc:h2:./testdb/unum_test_db");
         Statement statement=conn.createStatement();
         int rows= statement.executeUpdate("insert into numbers(gnum) values("+num+")");
         //log.info("record inserted with value - "+num);
-        conn.close();
+        statement.close();
         return rows;
     }
 
