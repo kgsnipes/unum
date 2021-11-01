@@ -281,6 +281,7 @@ class UniqueLongNumberGeneratorTest {
     }
 
     @Test
+    @Disabled
     void writingRecordsToDbForPrimaryKeyColumnTest()throws Exception
     {
         Connection conn = DriverManager.getConnection("jdbc:h2:./testdb/unum_test_db");
