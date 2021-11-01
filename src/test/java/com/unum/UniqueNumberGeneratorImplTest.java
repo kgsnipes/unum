@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -312,11 +313,55 @@ public class UniqueNumberGeneratorImplTest {
 
 
     @Test
-    void writeToDb()throws Exception
+    void writingRecordsToDbForPrimaryKeyColumnTest()throws Exception
     {
-        Connection conn = DriverManager.getConnection("jdbc:h2:~/test");
-        Statement statement=
+        dropTestTableinDB();
+        createTestTablesInDb();
+        int recordsToBeInserted=50_000;
+        int count=insertNumbersToTable(recordsToBeInserted);
+        Assertions.assertEquals(recordsToBeInserted,count,"Records inserted do no match the expectations");
+    }
+
+    void createTestTablesInDb()throws Exception
+    {
+        Connection conn = DriverManager.getConnection("jdbc:h2:./testdb/unum_test_db");
+        Statement statement=conn.createStatement();
+        statement.executeUpdate("create table numbers(" +
+                "gnum BIGINT,"+
+                "PRIMARY KEY(gnum))");
+
         conn.close();
+    }
+
+    void dropTestTableinDB()throws Exception
+    {
+        Connection conn = DriverManager.getConnection("jdbc:h2:./testdb/unum_test_db");
+        Statement statement=conn.createStatement();
+        statement.executeUpdate("DROP TABLE IF EXISTS numbers");
+
+        conn.close();
+    }
+
+    int insertNumbersToTable(int recordsToBeInserted)throws Exception
+    {
+        int totalRecords=0;
+        UniqueNumberGenerator generator=getGenerator(1,0,0,recordsToBeInserted);
+        for(int i=0;i<recordsToBeInserted;i++)
+        {
+            totalRecords+=insertNumberToTable(generator.getNext());
+        }
+
+        return totalRecords;
+    }
+
+    int insertNumberToTable(int num)throws Exception
+    {
+        Connection conn = DriverManager.getConnection("jdbc:h2:./testdb/unum_test_db");
+        Statement statement=conn.createStatement();
+        int rows= statement.executeUpdate("insert into numbers(gnum) values("+num+")");
+        //log.info("record inserted with value - "+num);
+        conn.close();
+        return rows;
     }
 
 }
