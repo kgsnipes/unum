@@ -15,9 +15,32 @@ public interface UniqueNumberGenerator {
     int MAX_IDENTIFIER_VALUE=255;// upper limit 255 - 8 bits
     int INSTANCE_MAX_VALUE=255;//upper limit 128 - 8 bits
 
+    /**
+     * This method fetches the next generated Integer number.
+     * @return Next Integer Number
+     * @throws UnumException
+     */
     int getNext() throws UnumException;
+
+    /**
+     * We can use this to resume the number generation from a specific generated number.
+     * @param number
+     * @throws UnumException
+     */
     void resumeFrom(int number) throws UnumException;
+
+    /**
+     * getting the Maximum numbers that can be generated in the particular instance.
+     * @return
+     * @throws UnumException
+     */
     int getUpperLimit()throws UnumException;
+
+    /**
+     * returns the current available numbers that can be generated in the particular instance.
+     * @return
+     * @throws UnumException
+     */
     int getCapacityAvailable()throws UnumException;
 
     /**
