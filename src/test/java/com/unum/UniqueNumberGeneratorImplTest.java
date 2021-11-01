@@ -3,6 +3,7 @@ package com.unum;
 import com.unum.exception.UnumException;
 import com.unum.impl.UniqueNumberGeneratorImpl;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -262,16 +263,19 @@ public class UniqueNumberGeneratorImplTest {
     }
 
     @Test
+    @Disabled
     void numberGenerationCheckWithLotsOfThreads()throws Exception
     {
         int threads=100;
+        int numbersToFetch=UniqueNumberGenerator.COUNTER_MAX_VALUE/threads;
         ExecutorService executorService=Executors.newFixedThreadPool(threads);
         List<Future<List<Integer>>> futures=new ArrayList<>();
         UniqueNumberGenerator generator=getGenerator(1,0,0,-1);
         Callable<List<Integer>> numberConsumingTask=()->{
 
+            log.info("Fetching "+numbersToFetch+" numbers.");
             List<Integer> numbersFetched=new ArrayList<>();
-            for(int i=0;i<UniqueNumberGenerator.COUNTER_MAX_VALUE/threads;i++) {
+            for(int i=0;i<numbersToFetch;i++) {
                 numbersFetched.add(generator.getNext());
             }
             log.info("Done");
@@ -281,31 +285,27 @@ public class UniqueNumberGeneratorImplTest {
 
         for(int i=0;i<threads;i++)
         {
-
-           // futures.add(numberConsumingTask)
             futures.add(executorService.submit(numberConsumingTask));
         }
 
-        int count=1;
-        if(executorService.awaitTermination(60,TimeUnit.SECONDS))
-        {
-            executorService.shutdown();
-            for(Future<List<Integer>> f :futures)
-            {
-                List<Integer> result=f.get();
-                if(f.isDone())
-                {
-                    if(result.size()<UniqueNumberGenerator.COUNTER_MAX_VALUE/threads)
-                    {
-                        Assertions.fail("Was not able to fetch enough numbers "+result.size());
-                    }
-                    count++;
-                }
+        int count=0;
 
+        for(Future<List<Integer>> f :futures)
+        {
+            List<Integer> result=f.get();
+            if(f.isDone())
+            {
+                if(result.size()<numbersToFetch)
+                {
+                    Assertions.fail("Was not able to fetch enough numbers "+result.size());
+                }
+                count++;
             }
+
         }
 
         Assertions.assertEquals(100,count,"All threads did not execute");
+        Assertions.assertEquals(35,UniqueNumberGenerator.COUNTER_MAX_VALUE-(numbersToFetch*threads),"The remaining do not match");
     }
 
 }

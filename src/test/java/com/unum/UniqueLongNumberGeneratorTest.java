@@ -3,8 +3,15 @@ package com.unum;
 import com.unum.exception.UnumException;
 import com.unum.impl.UniqueLongNumberGeneratorImpl;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.logging.Logger;
 
 
@@ -222,5 +229,53 @@ class UniqueLongNumberGeneratorTest {
         Assertions.assertEquals(testNumber,nextNumber,"Values dont match");
 
     }
+
+
+    @Test
+    @Disabled
+    void numberGenerationCheckWithLotsOfThreads()throws Exception
+    {
+        int threads=100;
+        long numbersToFetch=1000000;
+        ExecutorService executorService= Executors.newFixedThreadPool(threads);
+        List<Future<List<Long>>> futures=new ArrayList<>();
+        UniqueLongNumberGenerator generator=getGenerator(1,0,0,-1);
+        Callable<List<Long>> numberConsumingTask=()->{
+
+            log.info("Fetching "+numbersToFetch+" numbers.");
+            List<Long> numbersFetched=new ArrayList<>();
+            for(long i=0;i<numbersToFetch;i++) {
+                numbersFetched.add(generator.getNext());
+            }
+            log.info("Done");
+            return numbersFetched;
+
+        };
+
+        for(int i=0;i<threads;i++)
+        {
+            futures.add(executorService.submit(numberConsumingTask));
+        }
+
+        int count=0;
+
+        for(Future<List<Long>> f :futures)
+        {
+            List<Long> result=f.get();
+            if(f.isDone())
+            {
+                if(result.size()<numbersToFetch)
+                {
+                    Assertions.fail("Was not able to fetch enough numbers "+result.size());
+                }
+                count++;
+            }
+
+        }
+
+        Assertions.assertEquals(100,count,"All threads did not execute");
+       // Assertions.assertEquals(35,UniqueLongNumberGenerator.LONG_COUNTER_MAX_VALUE-(numbersToFetch*threads),"The remaining do not match");
+    }
+
 }
 
