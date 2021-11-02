@@ -287,7 +287,7 @@ class UniqueLongNumberGeneratorTest {
         Connection conn = DriverManager.getConnection("jdbc:h2:./testdb/unum_test_db");
         dropTestTableinDB(conn);
         createTestTablesInDb(conn);
-        long recordsToBeInserted=UniqueLongNumberGenerator.LONG_COUNTER_MAX_VALUE;
+        long recordsToBeInserted=100_000;
         int count=insertNumbersToTable(recordsToBeInserted,conn);
         conn.close();
         Assertions.assertEquals(recordsToBeInserted,count,"Records inserted do no match the expectations");
@@ -327,7 +327,7 @@ class UniqueLongNumberGeneratorTest {
     int insertNumberToTable(long num,Connection conn)throws Exception
     {
         Statement statement=conn.createStatement();
-        int rows= statement.executeUpdate("insert into numbers(gnum) values("+num+")");
+        int rows= statement.executeUpdate("insert into longer_numbers(gnum) values("+num+")");
         //log.info("record inserted with value - "+num);
         statement.close();
         return rows;
