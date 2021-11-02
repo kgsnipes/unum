@@ -15,10 +15,34 @@ public interface UniqueLongNumberGenerator {
     long LONG_MAX_IDENTIFIER_VALUE=35000;// upper limit 35k - 16 bits
     long LONG_INSTANCE_MAX_VALUE=128;//upper limit 128 - 8 bits
 
-
+    /**
+     * This method fetches the next generated Integer number.
+     * @return
+     * @throws UnumException
+     */
     long getNext() throws UnumException;
 
+    /**
+     * We can use this to resume the number generation from a specific generated number.
+     * @param number
+     * @throws UnumException
+     */
     void resumeFrom(long number) throws UnumException;
+
+    /**
+     * getting the Maximum numbers that can be generated in the particular instance.
+     * @return
+     * @throws UnumException
+     */
+    long getUpperLimit()throws UnumException;
+
+    /**
+     * returns the current available numbers that can be generated in the particular instance.
+     * @return
+     * @throws UnumException
+     */
+    long getCapacityAvailable()throws UnumException;
+
 
     /**
      * this helps print numbers in binary representation

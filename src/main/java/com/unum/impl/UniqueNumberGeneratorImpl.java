@@ -74,6 +74,13 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         return retVal;
     }
 
+    /**
+     * This method performs the bit packing to generate the next number based on identifier, instance and counter.
+     * @param identifier
+     * @param instance
+     * @param counter
+     * @return
+     */
     private int generateInt(int identifier,int instance, int counter)
     {
         int retVal=identifier;
@@ -104,8 +111,6 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         try
         {
             resumeLogic(number);
-
-
         } catch (Exception e) {
             throw new UnumException(e.getMessage(),e);
         } finally {

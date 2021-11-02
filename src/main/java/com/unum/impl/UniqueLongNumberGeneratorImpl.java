@@ -54,7 +54,7 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
     }
 
     protected long generate() throws UnumException {
-        long retVal=generateLong();
+        long retVal=generateLong(this.generatorIdentifier,this.instance,this.counter);
 
         if(this.counter<this.upperLimit)
         {
@@ -67,9 +67,9 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
         return retVal;
     }
 
-    private long generateLong()
+    private long generateLong(int identifier,int instance, long counter)
     {
-        long retVal=this.generatorIdentifier;
+        long retVal=identifier;
         retVal=retVal<<8;
         retVal=retVal|instance;
         retVal=retVal<<40;
@@ -141,6 +141,32 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
         tempCounter=tempCounter<<24;
         tempCounter=tempCounter>>24;
         return tempCounter;
+    }
+
+    @Override
+    public long getUpperLimit() throws UnumException {
+        lock.lock();
+        try
+        {
+            return this.generateLong(this.generatorIdentifier,this.instance,this.upperLimit);
+        } catch (Exception e) {
+            throw new UnumException(e.getMessage(),e);
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    @Override
+    public long getCapacityAvailable() throws UnumException {
+        lock.lock();
+        try
+        {
+            return this.upperLimit-this.counter;
+        } catch (Exception e) {
+            throw new UnumException(e.getMessage(),e);
+        } finally {
+            lock.unlock();
+        }
     }
 
 }
