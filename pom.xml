@@ -6,7 +6,7 @@
 
     <groupId>io.github.kgsnipes</groupId>
     <artifactId>unum</artifactId>
-    <version>1.02</version>
+    <version>1.03</version>
 
     <name>
         unum - Unique Number Generator

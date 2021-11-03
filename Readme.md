@@ -11,19 +11,24 @@ Typically applications powered by RDBMS can leverage the benefit as instant scal
 add dependency to your project.
 
 
-`
+```
 <dependency>
     <groupId>io.github.kgsnipes</groupId>
     <artifactId>unum</artifactId>
     <version>1.01</version>
 </dependency>
-`
+```
 
 
 Create a Number generator and start generating!
 
 
-  `UniqueLongNumberGenerator generator=new UniqueLongNumberGeneratorImpl(1001,1,-1,1000);`
+  ```
+  UniqueLongNumberGenerator generator=new UniqueLongNumberGeneratorImpl(1001,1,-1,1000);
+  long num=generator.getNext();
+  ```
+
+Look through the project wiki for more examples.
 
 feel free to reach out with your feedbacks.
 
