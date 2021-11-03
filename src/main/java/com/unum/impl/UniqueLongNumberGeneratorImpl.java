@@ -22,7 +22,7 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
         int identifier=this.extractIdentifier(resumePoint);
         int inst=this.extractInstance(resumePoint);
         long count=this.extractCounter(resumePoint);
-        this.validateArguments(generatorIdentifier,instance,count,poolsize);
+        this.validateArguments(identifier,inst,count+1,poolsize);
     }
 
     protected void validateArguments(int generatorIdentifier,int instance,long startPoint,long poolsize) throws UnumException {
