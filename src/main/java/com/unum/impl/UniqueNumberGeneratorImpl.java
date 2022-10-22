@@ -13,7 +13,7 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
     protected int counter=0;
     private int instance;
     protected int upperLimit;
-    private ReentrantLock lock=new ReentrantLock();
+    private ReentrantLock lock=new ReentrantLock(true);
 
     public UniqueNumberGeneratorImpl(int generatorIdentifier, int instance,int startPoint, int poolsize) throws UnumException {
 

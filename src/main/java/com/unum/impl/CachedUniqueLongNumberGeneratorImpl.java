@@ -14,7 +14,7 @@ public class CachedUniqueLongNumberGeneratorImpl extends UniqueLongNumberGenerat
 
     private int cacheSize=DEFAULT_CACHE_SIZE;
     private Queue<Long> queue;
-    private Lock lock=new ReentrantLock();
+    private Lock lock=new ReentrantLock(true);
 
     public CachedUniqueLongNumberGeneratorImpl(int generatorIdentifier, int instance,long startPoint, long poolsize) throws UnumException {
         super(generatorIdentifier, instance,startPoint, poolsize);

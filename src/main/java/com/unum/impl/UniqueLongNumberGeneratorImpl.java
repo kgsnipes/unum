@@ -12,7 +12,7 @@ public class UniqueLongNumberGeneratorImpl implements UniqueLongNumberGenerator 
     protected long counter;
     private int instance;
     protected long upperLimit;
-    private ReentrantLock lock=new ReentrantLock();
+    private ReentrantLock lock=new ReentrantLock(true);
 
     public UniqueLongNumberGeneratorImpl(int generatorIdentifier,int instance,long startPoint,long poolsize) throws UnumException {
         this.validateArguments(generatorIdentifier,instance,startPoint,poolsize);
