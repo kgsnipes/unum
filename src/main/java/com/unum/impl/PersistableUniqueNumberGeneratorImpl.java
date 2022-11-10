@@ -2,9 +2,11 @@ package com.unum.impl;
 
 import com.unum.UniqueNumberGenerator;
 import com.unum.exception.UnumException;
+import lombok.extern.slf4j.Slf4j;
 
 import java.sql.*;
 
+@Slf4j
 public class PersistableUniqueNumberGeneratorImpl implements UniqueNumberGenerator {
 
     private final static String NUMBER_GENERATOR_TABLE="number_generator_table";
@@ -34,7 +36,14 @@ public class PersistableUniqueNumberGeneratorImpl implements UniqueNumberGenerat
 
     private void init() throws UnumException {
         try {
-            this.initTableIfNotExists();
+            if(!tableExists(this.dbConnection,this.getTableName()))
+            {
+                this.createTable();
+                this.registerCurrentPool(this.startPoint);
+            }
+            else {
+                this.registerCurrentPool(-1);
+            }
 
         }
         catch (Exception ex)
@@ -44,23 +53,56 @@ public class PersistableUniqueNumberGeneratorImpl implements UniqueNumberGenerat
 
     }
 
-    private void registerCurrentPool()
+    protected String getTableName()
     {
+        return NUMBER_GENERATOR_TABLE+ "_"+this.generatorIdentifier;
+    }
+
+    private void registerCurrentPool(int startPoint) throws SQLException, UnumException {
+        if(startPoint>-1)
+        {
+            this.startPoint=this.getRecentEndingNumber();
+        }
+        else {
+
+        }
 
     }
 
-    private void initTableIfNotExists() throws SQLException, UnumException {
+    private void addNewEntryInTable()
+    {
+        
+    }
 
-        if(!tableExists(this.dbConnection,NUMBER_GENERATOR_TABLE))
+    private Integer getRecentEndingNumber() throws UnumException, SQLException {
+        Integer recentNumber=this.getUpperLimit();
+        Statement stmt=this.dbConnection.createStatement();
+        ResultSet rs=stmt.executeQuery("SELECT * FROM "+getTableName()+" ORDER BY timestamp desc");
+        if(rs.next())
         {
-            Statement stmt = this.dbConnection.createStatement();
-            String sql = "CREATE TABLE " +NUMBER_GENERATOR_TABLE+ "_"+this.generatorIdentifier+
-            "(startNumber INTEGER " +
-                    " lastNumber INTEGER, " +
-                    " timestamp BIGINT)";
-
-            stmt.executeUpdate(sql);
+            recentNumber=rs.getInt("lastnumber");
         }
+
+        if(recentNumber>=Integer.MAX_VALUE-1 && recentNumber<Integer.MAX_VALUE)
+        {
+            throw new UnumException("cannot increment more reached limit");
+        }
+        else {
+            recentNumber=recentNumber+1;
+        }
+        return recentNumber;
+    }
+
+    private void createTable() throws SQLException {
+
+        Statement stmt = this.dbConnection.createStatement();
+        String sql = "CREATE TABLE " +getTableName()+
+        "(startNumber INTEGER " +
+                " lastNumber INTEGER, " +
+                " timestamp BIGINT)";
+        log.info("Executing SQL : "+ sql);
+        stmt.executeUpdate(sql);
+
     }
 
     boolean tableExists(Connection connection, String tableName) throws SQLException {

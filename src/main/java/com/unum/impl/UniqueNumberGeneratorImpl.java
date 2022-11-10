@@ -4,9 +4,11 @@ package com.unum.impl;
 
 import com.unum.UniqueNumberGenerator;
 import com.unum.exception.UnumException;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.locks.ReentrantLock;
 
+@Slf4j
 public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
 
     private int generatorIdentifier;
@@ -69,6 +71,7 @@ public class UniqueNumberGeneratorImpl implements UniqueNumberGenerator {
         }
         else
         {
+
             throw new UnumException("Cannot produce more than the pool size of "+this.upperLimit);
         }
         return retVal;
